@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="KNGS Computer Science">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12345b"/><stop offset="1" stop-color="#1767a4"/></linearGradient>
+    <linearGradient id="aqua" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8be7ff"/><stop offset="1" stop-color="#43bde7"/></linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="103" fill="url(#bg)"/>
+  <rect x="22" y="22" width="468" height="468" rx="85" fill="none" stroke="#a1e8fc" stroke-opacity=".3" stroke-width="3"/>
+  <path d="M91 152 V113 Q91 91 113 91 H154" fill="none" stroke="url(#aqua)" stroke-width="23" stroke-linecap="round"/>
+  <path d="M358 421 H399 Q421 421 421 399 V358" fill="none" stroke="url(#aqua)" stroke-width="23" stroke-linecap="round"/>
+  <text x="256" y="323" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="211" font-weight="900" letter-spacing="-14" fill="#ffffff">CS</text>
+  <rect x="168" y="356" width="176" height="10" rx="5" fill="#5bc8ed"/>
+</svg>
