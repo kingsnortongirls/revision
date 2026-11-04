@@ -96,6 +96,10 @@
     .tag{font-size:11px;font-weight:750;border:1px solid #d7e5ef;background:#f6fafc;padding:4px 9px;border-radius:7px;color:#49657b}
     .open-hub{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;border-radius:11px;text-decoration:none;font-size:14px;font-weight:900;color:#fff;background:var(--navy);padding:10px 15px;margin-top:auto}
     .open-hub:hover{background:#1a5b8a}.open-hub .arrow{font-size:21px;line-height:1}
+    .hub-links{display:grid;gap:9px;margin-top:auto}
+    .hub-links .open-hub{margin-top:0}
+    .hub-links .open-hub.secondary{background:#e8f5fd;color:var(--navy);border:1.5px solid #a8d2e9}
+    .hub-links .open-hub.secondary:hover{background:#d8effc}
     .year-card.soon{background:#fbfdff;box-shadow:none;border-style:dashed;border-color:#c6d8e6;min-height:225px}
     .year-card.soon::before{background:#d8e5ed}
     .year-card.soon .year-number{background:#f1f5f8;color:#617b8d;border-color:#d8e4ec}
@@ -152,7 +156,7 @@
   <main id="revision-hubs" class="container">
     <div class="section-intro">
       <div><span class="eyebrow">Find your resources</span><h2>Choose your year group</h2><p class="subheading">All revision hubs open in your browser. No account or app needed.</p></div>
-      <span class="live-count"><span class="live-dot" aria-hidden="true"></span> 3 revision hubs available</span>
+      <span class="live-count"><span class="live-dot" aria-hidden="true"></span> 4 revision hubs available</span>
     </div>
 
     <section aria-labelledby="ks3-heading">
@@ -160,9 +164,12 @@
       <div class="cards">
         <article class="year-card active" id="year7">
           <div class="year-top"><span class="year-number" aria-hidden="true">7</span><span class="availability">● Available</span></div>
-          <h4>Year 7</h4><p class="detail">Units 1 &amp; 2: Under the Hood of a Computer and Think Like a Computer Scientist</p>
-          <div class="tags"><span class="tag">60 flashcards</span><span class="tag">Mind map</span><span class="tag">Revision notes</span></div>
-          <a class="open-hub" href="y7u1and2.html" aria-label="Open Year 7 Units 1 and 2 revision hub">Open Units 1 &amp; 2 <span class="arrow" aria-hidden="true">→</span></a>
+          <h4>Year 7</h4><p class="detail">Explore computer hardware and computational thinking, then learn how to stay safe online.</p>
+          <div class="tags"><span class="tag">2 revision hubs</span><span class="tag">Flashcards</span><span class="tag">Mind maps &amp; notes</span></div>
+          <div class="hub-links">
+            <a class="open-hub" href="y7u1and2.html" aria-label="Open Year 7 Units 1 and 2: Computing revision hub"><span>Units 1 &amp; 2: Computing</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y7u3.html" aria-label="Open Year 7 Unit 3: E-Safety revision hub"><span>Unit 3: E-Safety</span><span class="arrow" aria-hidden="true">→</span></a>
+          </div>
         </article>
         <article class="year-card active" id="year8">
           <div class="year-top"><span class="year-number" aria-hidden="true">8</span><span class="availability">● Available</span></div>
