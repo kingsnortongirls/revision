@@ -81,7 +81,10 @@
     .stage h3{font-size:17px;color:var(--navy);margin:0;letter-spacing:-.01em}
     .stage p{margin:0;color:var(--muted);font-size:13px}
     .stage-line{flex:1;height:1px;background:#d4e4ee;margin-left:6px}
-    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .year-card.featured{grid-column:1/-1;min-height:0}
+    .year-card.featured .hub-links{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:7px}
+    .year-card.featured .detail{min-height:0}
     .year-card{position:relative;display:flex;flex-direction:column;min-height:290px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:22px;overflow:hidden;transition:box-shadow .18s,transform .18s,border-color .18s}
     .year-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#146ba1,#58c3e9)}
     .year-card.active:hover{transform:translateY(-3px);box-shadow:0 18px 36px #183e601a;border-color:#92c4e1}
@@ -117,7 +120,7 @@
     .footer strong{color:#fff}.footer p{font-size:12px;margin:3px 0 0;color:#a8c5d7}
     .footer a{font-size:13px;color:#c1ebfc;text-underline-offset:3px}
     @media(max-width:950px){.hero-inner{gap:28px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.tips{grid-template-columns:1fr}.tip{align-items:center}}
-    @media(max-width:680px){.container{width:min(100% - 26px,1120px)}.header-inner{min-height:73px}.identity-mark{width:41px;height:41px}.identity-text strong{font-size:13px}.top-links{gap:2px}.top-links a{font-size:12px;padding:8px 9px}.top-links a:nth-child(2){display:none}.hero-inner{grid-template-columns:1fr;min-height:0;padding:38px 0 42px}.hero h1{margin:14px 0 12px;font-size:clamp(34px,9vw,49px)}.hero-visual{max-width:315px;justify-self:center;margin:5px 0 8px;padding-left:14px}.demo-inner{padding:19px 17px}.demo-question{font-size:25px}.floating-star{left:-6px}main{padding-top:31px}.cards,.simple-grid{grid-template-columns:1fr;gap:13px}.year-card{min-height:260px;padding:19px}.year-card.soon,.year-card.soon.slim{min-height:190px}.stage{margin-top:33px}.stage h3{font-size:16px}.tips{gap:11px;margin-top:33px}.tip{padding:16px}.section-intro{margin-bottom:14px}.live-count{margin-top:0}}
+    @media(max-width:680px){.container{width:min(100% - 26px,1120px)}.header-inner{min-height:73px}.identity-mark{width:41px;height:41px}.identity-text strong{font-size:13px}.top-links{gap:2px}.top-links a{font-size:12px;padding:8px 9px}.top-links a:nth-child(2){display:none}.hero-inner{grid-template-columns:1fr;min-height:0;padding:38px 0 42px}.hero h1{margin:14px 0 12px;font-size:clamp(34px,9vw,49px)}.hero-visual{max-width:315px;justify-self:center;margin:5px 0 8px;padding-left:14px}.demo-inner{padding:19px 17px}.demo-question{font-size:25px}.floating-star{left:-6px}main{padding-top:31px}.cards,.simple-grid{grid-template-columns:1fr;gap:13px}.year-card.featured{grid-column:auto}.year-card.featured .hub-links{grid-template-columns:1fr}.year-card{min-height:260px;padding:19px}.year-card.soon,.year-card.soon.slim{min-height:190px}.stage{margin-top:33px}.stage h3{font-size:16px}.tips{gap:11px;margin-top:33px}.tip{padding:16px}.section-intro{margin-bottom:14px}.live-count{margin-top:0}}
     @media(max-width:380px){.top-links a:nth-child(2){display:none}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.year-card{transition:none}}
     @media print{.site-header,.hero-actions,.footer{display:none}.hero{color:var(--navy);background:white;border:0}.hero-inner{display:block;min-height:0;padding:0}.hero-visual{display:none}.hero .intro,.hero h1 span{color:var(--navy)}.cards{grid-template-columns:repeat(3,1fr)}.year-card{min-height:0;box-shadow:none;break-inside:avoid}.open-hub{color:var(--navy);background:#edf6fd}}
@@ -156,19 +159,23 @@
   <main id="revision-hubs" class="container">
     <div class="section-intro">
       <div><span class="eyebrow">Find your resources</span><h2>Choose your year group</h2><p class="subheading">All revision hubs open in your browser. No account or app needed.</p></div>
-      <span class="live-count"><span class="live-dot" aria-hidden="true"></span> 4 revision hubs available</span>
+      <span class="live-count"><span class="live-dot" aria-hidden="true"></span> 8 revision hubs available</span>
     </div>
 
     <section aria-labelledby="ks3-heading">
       <div class="stage"><span class="stage-icon" aria-hidden="true">✦</span><div><h3 id="ks3-heading">Key Stage 3</h3><p>Years 7, 8 and 9</p></div><span class="stage-line" aria-hidden="true"></span></div>
       <div class="cards">
-        <article class="year-card active" id="year7">
-          <div class="year-top"><span class="year-number" aria-hidden="true">7</span><span class="availability">● Available</span></div>
-          <h4>Year 7</h4><p class="detail">Explore computer hardware and computational thinking, then learn how to stay safe online.</p>
-          <div class="tags"><span class="tag">2 revision hubs</span><span class="tag">Flashcards</span><span class="tag">Mind maps &amp; notes</span></div>
+        <article class="year-card active featured" id="year7">
+          <div class="year-top"><span class="year-number" aria-hidden="true">7</span><span class="availability">● All units ready</span></div>
+          <h4>Year 7</h4><p class="detail">Everything you need for Year 7 Computer Science, from computer systems and online safety to Python and spreadsheets. Choose a unit to start revising.</p>
+          <div class="tags"><span class="tag">6 revision hubs</span><span class="tag">3D flashcards</span><span class="tag">Mind maps &amp; notes</span><span class="tag">Interactive practice</span></div>
           <div class="hub-links">
-            <a class="open-hub" href="y7u1and2.html" aria-label="Open Year 7 Units 1 and 2: Computing revision hub"><span>Units 1 &amp; 2: Computing</span><span class="arrow" aria-hidden="true">→</span></a>
-            <a class="open-hub secondary" href="y7u3.html" aria-label="Open Year 7 Unit 3: E-Safety revision hub"><span>Unit 3: E-Safety</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub" href="y7u1and2.html" aria-label="Open Year 7 Units 1 and 2: Computing foundations"><span>Units 1 &amp; 2: Computing Foundations</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y7u3.html" aria-label="Open Year 7 Unit 3: E-Safety"><span>Unit 3: E-Safety</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y7u4and5.html" aria-label="Open Year 7 Units 4 and 5: Shapes and Animation"><span>Units 4 &amp; 5: Shapes &amp; Animation</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y7u6.html" aria-label="Open Year 7 Unit 6: Back to the Future"><span>Unit 6: Back to the Future</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y7u7.html" aria-label="Open Year 7 Unit 7: Python"><span>Unit 7: Python Programming</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y7u8.html" aria-label="Open Year 7 Unit 8: Spreadsheets"><span>Unit 8: Spreadsheets</span><span class="arrow" aria-hidden="true">→</span></a>
           </div>
         </article>
         <article class="year-card active" id="year8">
