@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12345b">
+  <meta name="description" content="Kings Norton Girls' School Computer Science revision. Choose your year group and access revision hubs, flashcards, mind maps and notes.">
+  <title>KNGS Computer Science | Revision Hub</title>
+  <style>
+    :root{
+      color-scheme:light;
+      --navy:#12345b;--navy2:#175688;--blue:#278cc5;--aqua:#4bc1e8;
+      --ice:#e8f5ff;--ink:#162b44;--muted:#51677d;--line:#d5e5f0;
+      --bg:#f5f9fc;--white:#fff;--shadow:0 12px 36px rgba(17,52,90,.075);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.55}
+    a{color:inherit}
+    a:focus-visible{outline:3px solid #f4ac36;outline-offset:4px}
+    .skip{position:absolute;top:-90px;left:15px;z-index:100;background:#fff;color:var(--navy);padding:12px 16px;border-radius:10px;font-weight:800}
+    .skip:focus{top:12px}
+    .container{width:min(1120px,calc(100% - 36px));margin-inline:auto}
+    .site-header{background:var(--navy);color:#fff;border-bottom:1px solid #ffffff24}
+    .header-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .identity{display:flex;align-items:center;gap:13px;text-decoration:none;min-width:0}
+    .identity-mark{display:grid;place-items:center;flex:none;width:45px;height:45px;background:linear-gradient(145deg,#55c8ea,#2694c4);color:#073453;border:1px solid #a9efff90;border-radius:13px;font-size:17px;font-weight:950;letter-spacing:-.05em;box-shadow:inset 0 1px 0 #ffffff8a}
+    .identity-text{display:grid;line-height:1.2;gap:4px}
+    .identity-text strong{font-size:15px;letter-spacing:.015em}
+    .identity-text span{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#c1ddef;font-weight:800}
+    .top-links{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+    .top-links a{font-weight:760;text-decoration:none;font-size:13px;padding:9px 13px;border-radius:9px;color:#dceef8}
+    .top-links a:hover{background:#ffffff1b;color:white}
+    .top-links a:first-child{color:#fff;background:#ffffff20;border:1px solid #ffffff30}
+    .hero{color:white;position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(125deg,#12345b 3%,#195889 58%,#1976a7 100%);border-bottom:5px solid var(--aqua)}
+    .hero::before{content:"";position:absolute;z-index:-1;inset:0;background-image:linear-gradient(#ffffff0c 1px,transparent 1px),linear-gradient(90deg,#ffffff0c 1px,transparent 1px);background-size:43px 43px;mask-image:linear-gradient(to right,transparent 35%,#000 100%)}
+    .hero::after{content:"";position:absolute;z-index:-1;width:560px;height:560px;right:-180px;top:-230px;border:1px solid #ffffff1f;border-radius:50%;box-shadow:0 0 0 72px #ffffff06,0 0 0 142px #ffffff05}
+    .hero-inner{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:48px;min-height:350px;padding:47px 0 55px}
+    .kicker{color:#a9e6ff;font-weight:900;letter-spacing:.18em;font-size:11px;text-transform:uppercase;display:flex;gap:10px;align-items:center}
+    .kicker::before{content:"";width:23px;height:3px;border-radius:99px;background:#67d7f6}
+    h1{font-size:clamp(35px,4.6vw,56px);line-height:1.065;letter-spacing:-.055em;margin:19px 0 15px;max-width:700px}
+    .hero h1 span{color:#8fe6ff}
+    .intro{font-size:clamp(15px,1.7vw,18px);color:#e1f1fa;max-width:580px;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .cta{display:inline-flex;justify-content:center;align-items:center;gap:9px;border-radius:12px;padding:12px 19px;min-height:47px;background:#fff;color:var(--navy);font-weight:850;text-decoration:none;box-shadow:0 5px 14px #072b4d28}
+    .cta:hover{background:#e6f7ff}
+    .cta-subtle{background:#ffffff10;color:#fff;border:1px solid #ffffff6b;box-shadow:none}
+    .cta-subtle:hover{background:#ffffff21}
+    .hero-visual{position:relative;padding:12px 4px 0 22px;max-width:395px;width:100%;justify-self:end}
+    .demo-card{position:relative;border:1px solid #ffffffb5;border-radius:21px;background:#fffffff0;box-shadow:0 20px 60px #07274266,0 3px 0 #a4d7eb;overflow:hidden;color:var(--navy);transform:rotate(2deg)}
+    .demo-top{background:#ecf7ff;border-bottom:1px solid #d8e8f2;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .window-dots{display:flex;gap:5px}.window-dots i{width:7px;height:7px;background:#9bbbd0;border-radius:50%}.window-dots i:first-child{background:#56b7dc}
+    .demo-top span{font-size:11px;font-weight:850;letter-spacing:.09em;text-transform:uppercase;color:#47738f}
+    .demo-inner{text-align:center;padding:29px 20px 23px}
+    .demo-label{font-size:10px;font-weight:850;letter-spacing:.15em;color:#2c7cad;text-transform:uppercase}
+    .demo-question{font-size:clamp(23px,2.7vw,31px);font-weight:900;line-height:1.2;letter-spacing:-.03em;margin:13px auto 19px}
+    .demo-pill{display:inline-block;background:#dff5fc;color:#175b81;border:1px solid #a8dbea;border-radius:99px;padding:7px 14px;font-size:12px;font-weight:800}
+    .demo-bottom{border-top:1px solid #e1edf4;background:#f8fcff;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#57718a;font-weight:800}
+    .meter{width:100px;height:7px;border-radius:99px;background:#dceaf2;overflow:hidden}.meter b{display:block;width:66%;height:100%;background:#38b0d7;border-radius:99px}
+    .floating-star{position:absolute;left:-12px;top:25px;border-radius:14px;background:#caeffd;color:#165077;width:52px;height:52px;display:grid;place-items:center;font-size:25px;box-shadow:0 8px 17px #0d315b30;transform:rotate(-12deg)}
+    .floating-check{position:absolute;right:-12px;bottom:-13px;background:#c5f6e2;color:#116348;border:2px solid white;border-radius:12px;padding:8px 13px;font-size:12px;font-weight:900;transform:rotate(5deg);box-shadow:0 8px 17px #0d315b38}
+    main{padding:48px 0 74px}
+    .section-intro{display:flex;align-items:end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin:0 0 26px}
+    .eyebrow{display:block;font-weight:900;text-transform:uppercase;letter-spacing:.13em;color:#267da9;font-size:12px;margin-bottom:5px}
+    h2{font-size:clamp(27px,3.5vw,35px);line-height:1.2;letter-spacing:-.035em;color:var(--navy);margin:0 0 7px}
+    .subheading{margin:0;color:var(--muted);max-width:590px;font-size:15px}
+    .live-count{display:inline-flex;gap:8px;align-items:center;background:#e5f5fb;border:1px solid #bcdfea;color:#155675;border-radius:99px;padding:8px 14px;font-size:12px;font-weight:850;white-space:nowrap}
+    .live-dot{height:8px;width:8px;border-radius:100%;background:#17986e;box-shadow:0 0 0 3px #17986e1e}
+    .stage{margin:37px 0 18px;display:flex;align-items:center;gap:11px;scroll-margin-top:22px}
+    .stage:first-of-type{margin-top:15px}
+    .stage-icon{width:34px;height:34px;display:grid;place-items:center;color:#1b72a2;background:#e4f2fb;border-radius:11px;font-size:16px}
+    .stage h3{font-size:17px;color:var(--navy);margin:0;letter-spacing:-.01em}
+    .stage p{margin:0;color:var(--muted);font-size:13px}
+    .stage-line{flex:1;height:1px;background:#d4e4ee;margin-left:6px}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+    .year-card{position:relative;display:flex;flex-direction:column;min-height:290px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:22px;overflow:hidden;transition:box-shadow .18s,transform .18s,border-color .18s}
+    .year-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#146ba1,#58c3e9)}
+    .year-card.active:hover{transform:translateY(-3px);box-shadow:0 18px 36px #183e601a;border-color:#92c4e1}
+    .year-top{display:flex;justify-content:space-between;align-items:start;gap:12px}
+    .year-number{width:61px;height:61px;display:grid;place-items:center;background:#eaf6ff;border:1px solid #b8daec;border-radius:16px;font-size:29px;font-weight:950;color:#145c8a;letter-spacing:-.04em}
+    .year-card:nth-child(2) .year-number{background:#eaf6ff;color:#24689a}
+    .year-card:nth-child(3) .year-number{background:#e6f8f5;color:#176e67;border-color:#b6e1da}
+    .availability{font-size:11px;font-weight:850;border-radius:99px;padding:5px 10px;white-space:nowrap;background:#e5f7ed;border:1px solid #b9e4c9;color:#176146}
+    .year-card h4{font-size:23px;color:var(--navy);margin:18px 0 4px;line-height:1.2;letter-spacing:-.03em}
+    .year-card .detail{font-size:14px;color:var(--muted);margin:0 0 16px;min-height:42px}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+    .tag{font-size:11px;font-weight:750;border:1px solid #d7e5ef;background:#f6fafc;padding:4px 9px;border-radius:7px;color:#49657b}
+    .open-hub{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;border-radius:11px;text-decoration:none;font-size:14px;font-weight:900;color:#fff;background:var(--navy);padding:10px 15px;margin-top:auto}
+    .open-hub:hover{background:#1a5b8a}.open-hub .arrow{font-size:21px;line-height:1}
+    .year-card.soon{background:#fbfdff;box-shadow:none;border-style:dashed;border-color:#c6d8e6;min-height:225px}
+    .year-card.soon::before{background:#d8e5ed}
+    .year-card.soon .year-number{background:#f1f5f8;color:#617b8d;border-color:#d8e4ec}
+    .year-card.soon .availability{background:#edf3f7;color:#60778a;border-color:#dae6ef}
+    .year-card.soon h4{margin-top:19px}
+    .year-card.soon .detail{min-height:0;margin:0}
+    .simple-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .year-card.soon.slim{min-height:205px}
+    .tips{margin-top:49px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+    .tip{background:#eaf5fc;border:1px solid #cde5f1;border-radius:15px;padding:20px 19px;display:flex;align-items:flex-start;gap:14px}
+    .tip-icon{width:40px;height:40px;display:grid;place-items:center;flex:none;background:#fff;border:1px solid #d1e5ef;border-radius:12px;font-size:21px}
+    .tip h3{font-size:15px;color:var(--navy);margin:0 0 4px}.tip p{font-size:13px;color:#46647a;margin:0}
+    .footer{background:#102d4e;color:#d6e7f2;padding:26px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .footer strong{color:#fff}.footer p{font-size:12px;margin:3px 0 0;color:#a8c5d7}
+    .footer a{font-size:13px;color:#c1ebfc;text-underline-offset:3px}
+    @media(max-width:950px){.hero-inner{gap:28px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.tips{grid-template-columns:1fr}.tip{align-items:center}}
+    @media(max-width:680px){.container{width:min(100% - 26px,1120px)}.header-inner{min-height:73px}.identity-mark{width:41px;height:41px}.identity-text strong{font-size:13px}.top-links{gap:2px}.top-links a{font-size:12px;padding:8px 9px}.top-links a:nth-child(2){display:none}.hero-inner{grid-template-columns:1fr;min-height:0;padding:38px 0 42px}.hero h1{margin:14px 0 12px;font-size:clamp(34px,9vw,49px)}.hero-visual{max-width:315px;justify-self:center;margin:5px 0 8px;padding-left:14px}.demo-inner{padding:19px 17px}.demo-question{font-size:25px}.floating-star{left:-6px}main{padding-top:31px}.cards,.simple-grid{grid-template-columns:1fr;gap:13px}.year-card{min-height:260px;padding:19px}.year-card.soon,.year-card.soon.slim{min-height:190px}.stage{margin-top:33px}.stage h3{font-size:16px}.tips{gap:11px;margin-top:33px}.tip{padding:16px}.section-intro{margin-bottom:14px}.live-count{margin-top:0}}
+    @media(max-width:380px){.top-links a:nth-child(2){display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.year-card{transition:none}}
+    @media print{.site-header,.hero-actions,.footer{display:none}.hero{color:var(--navy);background:white;border:0}.hero-inner{display:block;min-height:0;padding:0}.hero-visual{display:none}.hero .intro,.hero h1 span{color:var(--navy)}.cards{grid-template-columns:repeat(3,1fr)}.year-card{min-height:0;box-shadow:none;break-inside:avoid}.open-hub{color:var(--navy);background:#edf6fd}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#revision-hubs">Skip to revision hubs</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="identity" href="./" aria-label="KNGS Computer Science home">
+        <span class="identity-mark" aria-hidden="true">CS</span>
+        <span class="identity-text"><strong>KNGS Computer Science</strong><span>Revision Hub</span></span>
+      </a>
+      <nav class="top-links" aria-label="Main navigation"><a href="#revision-hubs">Revision hubs</a><a href="#how-to-revise">How to revise</a></nav>
+    </div>
+  </header>
+  <section class="hero" aria-labelledby="welcome-title">
+    <div class="container hero-inner">
+      <div>
+        <div class="kicker">Kings Norton Girls' School</div>
+        <h1 id="welcome-title">Learn it.<br>Test it.<br><span>Remember it.</span></h1>
+        <p class="intro">Your place for Computer Science revision. Choose your year group, explore the notes and mind maps, and test yourself with interactive flashcards.</p>
+        <div class="hero-actions"><a class="cta" href="#revision-hubs">Explore revision hubs <span aria-hidden="true">↗</span></a><a class="cta cta-subtle" href="#how-to-revise">Revision tips <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="floating-star">✦</div>
+        <div class="demo-card">
+          <div class="demo-top"><div class="window-dots"><i></i><i></i><i></i></div><span>Practice makes progress</span></div>
+          <div class="demo-inner"><div class="demo-label">Flashcard practice</div><div class="demo-question">What can you<br>remember today?</div><span class="demo-pill">Think → Check → Improve</span></div>
+          <div class="demo-bottom"><span>YOUR PROGRESS</span><span class="meter"><b></b></span></div>
+        </div>
+        <div class="floating-check">✓ Keep going!</div>
+      </div>
+    </div>
+  </section>
+  <main id="revision-hubs" class="container">
+    <div class="section-intro">
+      <div><span class="eyebrow">Find your resources</span><h2>Choose your year group</h2><p class="subheading">All revision hubs open in your browser. No account or app needed.</p></div>
+      <span class="live-count"><span class="live-dot" aria-hidden="true"></span> 3 revision hubs available</span>
+    </div>
+
+    <section aria-labelledby="ks3-heading">
+      <div class="stage"><span class="stage-icon" aria-hidden="true">✦</span><div><h3 id="ks3-heading">Key Stage 3</h3><p>Years 7, 8 and 9</p></div><span class="stage-line" aria-hidden="true"></span></div>
+      <div class="cards">
+        <article class="year-card active" id="year7">
+          <div class="year-top"><span class="year-number" aria-hidden="true">7</span><span class="availability">● Available</span></div>
+          <h4>Year 7</h4><p class="detail">Units 1 &amp; 2: Under the Hood of a Computer and Think Like a Computer Scientist</p>
+          <div class="tags"><span class="tag">60 flashcards</span><span class="tag">Mind map</span><span class="tag">Revision notes</span></div>
+          <a class="open-hub" href="y7u1and2.html" aria-label="Open Year 7 Units 1 and 2 revision hub">Open Units 1 &amp; 2 <span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+        <article class="year-card active" id="year8">
+          <div class="year-top"><span class="year-number" aria-hidden="true">8</span><span class="availability">● Available</span></div>
+          <h4>Year 8</h4><p class="detail">Units 1 &amp; 2: Review key concepts and build confidence with exam-style practice.</p>
+          <div class="tags"><span class="tag">Flashcards</span><span class="tag">Mind map</span><span class="tag">Revision notes</span></div>
+          <a class="open-hub" href="y8u1and2.html" aria-label="Open Year 8 Units 1 and 2 revision hub">Open Units 1 &amp; 2 <span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+        <article class="year-card active" id="year9">
+          <div class="year-top"><span class="year-number" aria-hidden="true">9</span><span class="availability">● Available</span></div>
+          <h4>Year 9</h4><p class="detail">Unit 1: Computer systems, software, storage, legislation and the environment.</p>
+          <div class="tags"><span class="tag">79 flashcards</span><span class="tag">Mind map</span><span class="tag">Revision notes</span></div>
+          <a class="open-hub" href="y9u1.html" aria-label="Open Year 9 Unit 1 revision hub">Open Unit 1 <span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="gcse-heading">
+      <div class="stage"><span class="stage-icon" aria-hidden="true">⌘</span><div><h3 id="gcse-heading">GCSE Computer Science</h3><p>Years 10 and 11</p></div><span class="stage-line" aria-hidden="true"></span></div>
+      <div class="simple-grid">
+        <article class="year-card soon slim" id="year10"><div class="year-top"><span class="year-number" aria-hidden="true">10</span><span class="availability">Coming soon</span></div><h4>Year 10</h4><p class="detail">GCSE revision resources will appear here when available.</p></article>
+        <article class="year-card soon slim" id="year11"><div class="year-top"><span class="year-number" aria-hidden="true">11</span><span class="availability">Coming soon</span></div><h4>Year 11</h4><p class="detail">GCSE revision resources will appear here when available.</p></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="sixth-heading">
+      <div class="stage"><span class="stage-icon" aria-hidden="true">◇</span><div><h3 id="sixth-heading">Sixth Form Computer Science</h3><p>Years 12 and 13</p></div><span class="stage-line" aria-hidden="true"></span></div>
+      <div class="simple-grid">
+        <article class="year-card soon slim" id="year12"><div class="year-top"><span class="year-number" aria-hidden="true">12</span><span class="availability">Coming soon</span></div><h4>Year 12</h4><p class="detail">A Level revision resources will appear here when available.</p></article>
+        <article class="year-card soon slim" id="year13"><div class="year-top"><span class="year-number" aria-hidden="true">13</span><span class="availability">Coming soon</span></div><h4>Year 13</h4><p class="detail">A Level revision resources will appear here when available.</p></article>
+      </div>
+    </section>
+
+    <section id="how-to-revise" aria-labelledby="tips-title">
+      <div class="stage"><span class="stage-icon" aria-hidden="true">✓</span><div><h3 id="tips-title">Make your revision count</h3><p>Small steps make a big difference</p></div><span class="stage-line" aria-hidden="true"></span></div>
+      <div class="tips">
+        <div class="tip"><span class="tip-icon" aria-hidden="true">🧠</span><div><h3>Recall before revealing</h3><p>Try to answer each flashcard yourself before checking the answer.</p></div></div>
+        <div class="tip"><span class="tip-icon" aria-hidden="true">↻</span><div><h3>Revisit tricky topics</h3><p>Use your revision notes and return to anything you found difficult.</p></div></div>
+        <div class="tip"><span class="tip-icon" aria-hidden="true">⏱</span><div><h3>Revise little and often</h3><p>A focused 10-minute session is better than leaving it all until the last minute.</p></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><div><strong>KNGS Computer Science</strong><p>Kings Norton Girls' School · Revision resources for pupils</p></div><a href="#revision-hubs">Back to revision hubs ↑</a></div></footer>
+</body>
+</html>
