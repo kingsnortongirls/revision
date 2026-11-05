@@ -100,7 +100,7 @@
     .open-hub{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;border-radius:11px;text-decoration:none;font-size:14px;font-weight:900;color:#fff;background:var(--navy);padding:10px 15px;margin-top:auto}
     .open-hub:hover{background:#1a5b8a}.open-hub .arrow{font-size:21px;line-height:1}
     .hub-links{display:grid;gap:9px;margin-top:auto}
-    .hub-links .open-hub{margin-top:0}
+    .hub-links .open-hub{margin-top:0;min-width:0}.hub-links .open-hub span:first-child{overflow-wrap:anywhere}
     .hub-links .open-hub.secondary{background:#e8f5fd;color:var(--navy);border:1.5px solid #a8d2e9}
     .hub-links .open-hub.secondary:hover{background:#d8effc}
     .year-card.soon{background:#fbfdff;box-shadow:none;border-style:dashed;border-color:#c6d8e6;min-height:225px}
@@ -142,8 +142,8 @@
       <div>
         <div class="kicker">Kings Norton Girls' School</div>
         <h1 id="welcome-title">Learn it.<br>Test it.<br><span>Remember it.</span></h1>
-        <p class="intro">Your place for Computer Science revision. Choose your year group, explore the notes and mind maps, and test yourself with interactive flashcards.</p>
-        <div class="hero-actions"><a class="cta" href="#revision-hubs">Explore revision hubs <span aria-hidden="true">↗</span></a><a class="cta cta-subtle" href="#how-to-revise">Revision tips <span aria-hidden="true">↓</span></a></div>
+        <p class="intro">Your place for Computer Science revision. Choose your year group, explore notes and mind maps, and practise with interactive flashcards and learning tools.</p>
+        <div class="hero-actions"><a class="cta" href="#year7">Year 7 <span aria-hidden="true">↘</span></a><a class="cta" href="#year8">Year 8 <span aria-hidden="true">↘</span></a><a class="cta" href="#year9">Year 9 <span aria-hidden="true">↘</span></a><a class="cta cta-subtle" href="#how-to-revise">Revision tips <span aria-hidden="true">↓</span></a></div>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="floating-star">✦</div>
@@ -159,7 +159,7 @@
   <main id="revision-hubs" class="container">
     <div class="section-intro">
       <div><span class="eyebrow">Find your resources</span><h2>Choose your year group</h2><p class="subheading">All revision hubs open in your browser. No account or app needed.</p></div>
-      <span class="live-count"><span class="live-dot" aria-hidden="true"></span> 8 revision hubs available</span>
+      <span class="live-count"><span class="live-dot" aria-hidden="true"></span> 16 revision hubs available</span>
     </div>
 
     <section aria-labelledby="ks3-heading">
@@ -179,16 +179,30 @@
           </div>
         </article>
         <article class="year-card active" id="year8">
-          <div class="year-top"><span class="year-number" aria-hidden="true">8</span><span class="availability">● Available</span></div>
-          <h4>Year 8</h4><p class="detail">Units 1 &amp; 2: Review key concepts and build confidence with exam-style practice.</p>
-          <div class="tags"><span class="tag">Flashcards</span><span class="tag">Mind map</span><span class="tag">Revision notes</span></div>
-          <a class="open-hub" href="y8u1and2.html" aria-label="Open Year 8 Units 1 and 2 revision hub">Open Units 1 &amp; 2 <span class="arrow" aria-hidden="true">→</span></a>
+          <div class="year-top"><span class="year-number" aria-hidden="true">8</span><span class="availability">● 5 hubs ready</span></div>
+          <h4>Year 8</h4>
+          <p class="detail">Revise binary and hexadecimal, Flowol control systems, sorting algorithms and online safety using interactive tools.</p>
+          <div class="tags"><span class="tag">5 revision hubs</span><span class="tag">3D flashcards</span><span class="tag">Interactive simulations</span></div>
+          <div class="hub-links">
+            <a class="open-hub" href="y8u1and2.html" aria-label="Open Year 8 Units 1 and 2 revision"><span>Units 1 &amp; 2: Computing Foundations</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y8u3and4.html" aria-label="Open Year 8 Units 3 and 4 binary and instruction sets revision"><span>Units 3 &amp; 4: Binary &amp; Instruction Sets</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y8u4.html" aria-label="Open Year 8 Unit 4 Flowol revision"><span>Unit 4: Flowol</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y8u5.html" aria-label="Open Year 8 Unit 5 sorting revision"><span>Unit 5: Sorted! (Sorting)</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y8u6.html" aria-label="Open Year 8 Unit 6 E-Safety revision"><span>Unit 6: E-Safety</span><span class="arrow" aria-hidden="true">→</span></a>
+          </div>
         </article>
         <article class="year-card active" id="year9">
-          <div class="year-top"><span class="year-number" aria-hidden="true">9</span><span class="availability">● Available</span></div>
-          <h4>Year 9</h4><p class="detail">Unit 1: Computer systems, software, storage, legislation and the environment.</p>
-          <div class="tags"><span class="tag">79 flashcards</span><span class="tag">Mind map</span><span class="tag">Revision notes</span></div>
-          <a class="open-hub" href="y9u1.html" aria-label="Open Year 9 Unit 1 revision hub">Open Unit 1 <span class="arrow" aria-hidden="true">→</span></a>
+          <div class="year-top"><span class="year-number" aria-hidden="true">9</span><span class="availability">● 5 hubs ready</span></div>
+          <h4>Year 9</h4>
+          <p class="detail">Strengthen knowledge of computing, logic, programming, image editing and artificial intelligence.</p>
+          <div class="tags"><span class="tag">5 revision hubs</span><span class="tag">3D flashcards</span><span class="tag">Practice labs</span></div>
+          <div class="hub-links">
+            <a class="open-hub" href="y9u1.html" aria-label="Open Year 9 Unit 1 computer systems revision"><span>Unit 1: Computer Systems</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y9u2.html" aria-label="Open Year 9 Unit 2 logic revision"><span>Unit 2: Logic &amp; Flowcharts</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y9u3.html" aria-label="Open Year 9 Unit 3 Python revision"><span>Unit 3: Python Next Steps</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y9u4.html" aria-label="Open Year 9 Unit 4 Photopea revision"><span>Unit 4: Photopea &amp; Photo Editing</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a class="open-hub secondary" href="y9u5.html" aria-label="Open Year 9 Unit 5 AI revision"><span>Unit 5: Artificial Intelligence</span><span class="arrow" aria-hidden="true">→</span></a>
+          </div>
         </article>
       </div>
     </section>
