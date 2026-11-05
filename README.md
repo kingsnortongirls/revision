@@ -1,12 +1,12 @@
 # KNGS Computer Science Revision Hub
 
-A collection of accessible, interactive revision resources for **Key Stage 3 Computer Science** at **Kings Norton Girls' School (KNGS)**.
+A collection of accessible, interactive revision resources for **Key Stage 3, GCSE and A Level Computer Science** at **Kings Norton Girls' School (KNGS)**.
 
 The hub gives pupils a simple place to revisit classroom learning, practise key knowledge and build confidence before assessments. Resources are designed for independent study at home or in school.
 
 ## Features
 
-- **Year-group navigation:** Find revision resources for Years 7, 8 and 9.
+- **Year-group navigation:** Find resources for Years 7, 8 and 9, alongside combined GCSE (Years 10 and 11) and A Level (Years 12 and 13) sections.
 - **Interactive activities:** Flashcards, self-check questions and other tasks where appropriate.
 - **Clear explanations:** Student-friendly notes, examples and visual memory aids.
 - **Support and challenge:** Scaffolding to help pupils get started, plus extension activities to deepen understanding.
@@ -23,6 +23,8 @@ The hub is organised by year group and unit. Available units may change as resou
 | **Year 7** | Unit 1 and 2 revision, including foundational Computer Science knowledge and e-safety resources |
 | **Year 8** | Unit 1 and 2 revision, plus further units including sorting and e-safety |
 | **Year 9** | Computer Science units including Python programming, image editing and artificial intelligence |
+| **GCSE (Years 10 and 11)** | A combined OCR J277 revision section, including published networking resources |
+| **A Level (Years 12 and 13)** | One combined OCR H446 revision section, with resources coming soon |
 
 **Open the site's home page (`index.html`) to see the current list of resources.** The home page is the authoritative directory of published units.
 
