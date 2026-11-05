@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#12345b">
+<meta name="description" content="Kings Norton Girls' School Year 9 Unit 3 Python Next Steps revision: 3D flashcards, interactive coding practice, loops, lists, functions and testing.">
+<title>KNGS Computer Science | Year 9 Unit 3: Python Next Steps</title>
+<style>
+:root{--navy:#12345b;--dark:#102c49;--blue:#1674b1;--sky:#1e9bcc;--aqua:#4bc1e8;--ice:#e9f6ff;--paper:#fff;--ink:#17324d;--muted:#526a7f;--line:#caddea;--green:#166a4a;--amber:#a55a0a;--bg:#f4f8fc;--shadow:0 8px 28px rgba(16,47,78,.08);color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.53 system-ui,-apple-system,'Segoe UI',Arial,sans-serif}button,select,input,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.55}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #f5aa26;outline-offset:2px}a{color:#106a9f}
+header{background:radial-gradient(circle at 90% -15%,#2482b9 0,transparent 35%),linear-gradient(115deg,#102b4b,#174f80);color:#fff;border-bottom:5px solid var(--aqua);padding:19px 18px 29px}.wrap{max-width:1090px;margin:auto}.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:#b1e7ff;font-weight:850}.header-row{display:flex;align-items:center;justify-content:space-between;gap:16px}.crumb{color:#d2e9f9;text-decoration:none;font-size:13px;border:1px solid #ffffff55;border-radius:99px;padding:6px 11px}.crumb:hover{background:#ffffff1c}h1{font-size:clamp(31px,5.2vw,49px);line-height:1.08;margin:11px 0 8px;letter-spacing:-.038em}header p{margin:0;color:#dcefff;max-width:730px}.hero-icons{margin:19px 0 0;display:flex;flex-wrap:wrap;gap:8px}.hero-icons span{border-radius:99px;border:1px solid #b0daf07c;background:#ffffff18;padding:6px 11px;font-size:12px;font-weight:800}
+main{max-width:1090px;margin:auto;padding:16px 14px 50px}.tabs{position:sticky;top:0;z-index:12;background:#f4f8fcf5;backdrop-filter:blur(8px);padding:8px 0 10px;border-bottom:1px solid #d1e1ed;display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin}.tab{flex:none;background:#fff;border:1.5px solid #b8d0df;border-radius:11px;padding:10px 15px;color:var(--navy);min-height:45px;font-weight:800;white-space:nowrap}.tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 3px 0 var(--aqua)}.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:clamp(15px,2.4vw,24px);box-shadow:var(--shadow);margin:0 0 16px}.tab-panel[hidden]{display:none!important}h2{color:var(--navy);font-size:clamp(22px,3.4vw,29px);letter-spacing:-.025em;line-height:1.2;margin:0 0 12px}h3{color:var(--navy);font-size:19px;margin:0 0 10px}h4{color:var(--navy);margin:0 0 7px}p{margin:7px 0 12px}.muted{color:var(--muted)}.small{font-size:13px}.lead{max-width:800px;margin-top:0}.btn{display:inline-flex;justify-content:center;align-items:center;gap:7px;min-height:43px;border:1.5px solid #b5cbdb;padding:8px 15px;border-radius:10px;color:var(--navy);background:white;font-weight:750}.btn:hover{background:#e9f5fd}.btn.primary{background:var(--navy);color:white;border-color:var(--navy)}.btn.primary:hover{background:#20537e}.btn.good{background:#e2f4e9;color:#125d41;border-color:#80b99b}.btn.retry{background:#fff2e2;color:#814d0c;border-color:#e3c38f}.btn-bar{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0}.pill{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.015em;border:1px solid #c8deed;background:#eff8ff;color:#24668f;padding:5px 10px;border-radius:99px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.09em;font-weight:850;color:#257bb2}.callout{background:#e9f6ff;border-left:4px solid var(--blue);padding:13px 15px;border-radius:10px;margin:13px 0}.success{border-left-color:#16805a;background:#e9f8ee}.warning{border-left-color:#d49a3a;background:#fff8e9}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.mini{border:1px solid #d3e4f0;border-radius:13px;padding:14px;background:#f8fbfd}.mini strong{display:block;color:var(--navy);margin-bottom:5px}label{font-weight:750;font-size:14px;color:var(--navy)}input[type=number],input[type=text],select,textarea{border:1.5px solid #b6ccda;border-radius:10px;background:white;color:var(--ink);padding:10px 12px;min-height:43px;min-width:0;width:100%}textarea{resize:vertical;min-height:145px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:14px}input[type=range]{width:100%;accent-color:#17669e}.field{display:grid;gap:6px;min-width:0}.code{background:#132d48;color:#ecf9ff;border-radius:11px;padding:14px;overflow:auto;white-space:pre-wrap;font:14px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}.table-scroll{overflow:auto;max-width:100%}table{border-collapse:collapse;width:100%;min-width:330px}th,td{border:1px solid #d3e1eb;padding:9px 11px;text-align:left}th{background:#e9f4fd;color:var(--navy)}.split{display:grid;grid-template-columns:1fr 1fr;gap:20px}.statline{display:flex;flex-wrap:wrap;gap:9px;justify-content:space-between;color:#4b687e;font-size:13px;font-weight:750}.meter{height:11px;border-radius:99px;background:#e4edf3;overflow:hidden;margin:14px 0 7px}.meter span{display:block;width:0;height:100%;background:linear-gradient(90deg,#1b8aca,#1a8f6d);transition:width .25s}.cardshell{perspective:1400px;margin:19px 0 12px;width:100%}.flip{display:block;width:100%;min-height:335px;border:0;padding:0;text-align:center;background:transparent;border-radius:18px;color:inherit;cursor:pointer}.flip-inner{display:grid;grid-template-areas:"layer";min-height:335px;width:100%;transform-style:preserve-3d;transition:transform .58s cubic-bezier(.2,.8,.2,1)}.flip.is-flipped .flip-inner{transform:rotateY(180deg)}.card-face{grid-area:layer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;min-height:335px;width:100%;padding:26px 22px;background:linear-gradient(145deg,#f3faff,#fff);border:2px solid #b4d4e8;box-shadow:0 11px 25px rgba(17,65,100,.1)}.card-face.back{transform:rotateY(180deg);background:linear-gradient(145deg,#e9fbf3,#fff);border-color:#86c6ac}.card-face .prompt{font-size:clamp(19px,3vw,26px);font-weight:850;line-height:1.33;max-width:740px;overflow-wrap:anywhere}.card-face.back .prompt{font-size:clamp(17px,2.3vw,23px)}.face-label{font-weight:900;letter-spacing:.09em;font-size:11px;text-transform:uppercase;color:#3180a3}.back .face-label{color:var(--green)}.flip-hint{font-size:12px;color:#526b7f}.card-visual{width:100%;max-width:530px;max-height:162px;display:grid;place-items:center}.card-visual svg{width:100%;height:auto;max-height:160px}.bits-preview{display:flex;justify-content:center;flex-wrap:wrap;gap:5px}.bits-preview span{padding:5px 8px;border:1px solid #c1d5e4;border-radius:7px;background:#fff;font-family:monospace;font-size:20px;font-weight:800;min-width:30px}.bits-preview i{font-size:12px;font-style:normal;color:#536d82;display:block}.face-visual-note{color:#355b75;font-size:12px}.cardtools{display:grid;grid-template-columns:1fr 1fr;gap:9px}.filter-bar{display:flex;align-items:end;gap:9px;flex-wrap:wrap}.filter-bar .field{flex:1;min-width:210px}.filter-bar button{flex:none}.optbtn{width:100%;text-align:left;border:1px solid #bed2df;background:white;color:var(--ink);border-radius:10px;padding:12px;min-height:47px;font-weight:650}.optbtn:hover{background:#e9f5ff}.optbtn.chosen{background:#dfedfa;border:2px solid #267fb5}.optbtn.correct{background:#e3f7ee;border:2px solid #29885c}.optbtn.wrong{background:#fff0e6;border:2px solid #bf7540}.quiz-answers{display:grid;gap:9px}.big-number{font-size:clamp(24px,4vw,36px);font-weight:900;color:var(--navy)}.bitboard{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;margin:14px 0}.bitbtn{border:1.5px solid #b2cadc;border-radius:10px;background:#fff;padding:8px 1px;color:var(--navy);min-height:77px;font-weight:900;display:grid;place-items:center;gap:2px;font-size:23px}.bitbtn.on{background:#165884;color:white;border-color:#165884}.bitbtn small{font:12px/1.2 ui-monospace,monospace;color:#54718b}.bitbtn.on small{color:#bfecff}.logic-svg{max-width:550px;width:100%;display:block;margin:10px auto}.value-buttons{display:flex;gap:8px;flex-wrap:wrap}.value-buttons button{min-width:72px}.value-buttons button.active{background:#15547f;color:white}.trace{padding:12px 15px;margin-top:12px;background:#edf6fd;border:1px solid #cae1f0;border-radius:11px}.trace ol{margin:3px 0 0;padding-left:22px}.trace li{padding:3px 0}.binary-row{font:clamp(16px,4.2vw,25px)/1.65 ui-monospace,Consolas,monospace;font-weight:800;letter-spacing:.07em}.bit-step{padding:6px 10px;border:1px solid #c9dce8;border-radius:9px;background:#f3faff;margin:8px 0}.bit-step.current{border-color:#208cc5;background:#e1f5ff}.map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.map .branch{background:#f8fbff;border:1px solid #cce1ef;border-top:5px solid #1d83b7;border-radius:13px;padding:14px}.map .branch:nth-child(2){border-top-color:#3e9f9b}.map .branch:nth-child(3){border-top-color:#9965ba}.map .branch:nth-child(4){border-top-color:#2677aa}.map .branch:nth-child(5){border-top-color:#c48c26}.map .branch:nth-child(6){border-top-color:#368d69}.map ul{margin:7px 0 0;padding-left:20px;font-size:14px}.map li{margin:4px 0}details.notes{border:1px solid #cadfed;border-radius:13px;background:#fff;margin:0 0 10px;overflow:hidden}details.notes summary{cursor:pointer;padding:15px;font-size:17px;color:var(--navy);font-weight:800;background:#f4faff}details.notes>div{padding:8px 16px 17px}details.notes p{margin:8px 0 10px}details.notes ul{padding-left:21px}.diagram{width:100%;max-width:620px;margin:10px auto;display:block}.stepbox{padding:15px;border:1px solid #d0e3ee;border-radius:12px;background:#f9fcff}.diagram svg{width:100%;height:auto}.exercise-list{display:grid;gap:12px}.line-card{border:1px solid #cfe0eb;padding:14px;border-radius:12px;background:#f9fcff}footer{text-align:center;padding:20px;color:#657e8d;font-size:12px}.notice{font-size:13px;padding:10px 13px;background:#fff7e9;border-radius:9px;border:1px solid #edd7ad}.chip{padding:5px 9px;background:#e8f6ff;color:#135c8e;font-size:12px;border-radius:99px;font-weight:850}.topic-header{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.dot{width:10px;height:10px;border-radius:50%;display:inline-block;background:#3095c5;margin-right:6px}.code-inline{padding:2px 5px;border-radius:5px;background:#e7f1fa;color:#114567;font-family:monospace}.center{text-align:center}
+@media(max-width:760px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.map{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr}.flip,.flip-inner,.card-face{min-height:325px}.card-face{padding:18px 14px}.card-visual{max-height:135px}.card-visual svg{max-height:130px}}
+@media(max-width:500px){main{padding:10px 10px 34px}header{padding:16px 13px 22px}.grid,.grid3,.map{grid-template-columns:1fr}.panel{padding:14px}.cardtools{grid-template-columns:1fr 1fr}.bitboard{gap:3px}.bitbtn{min-height:67px;padding:5px 0;font-size:20px;border-radius:8px}.bitbtn small{font-size:10px}.filter-bar .field{min-width:100%}.flip,.flip-inner,.card-face{min-height:345px}.card-face .prompt{font-size:19px}.card-visual svg{max-height:116px}.header-row{align-items:start}.hero-icons span{font-size:11px}table{font-size:13px}th,td{padding:7px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+.flip{appearance:none;-webkit-appearance:none;min-width:0;isolation:isolate}.flip-inner{display:grid!important;grid-template-areas:"layer";width:100%;min-width:0}.card-face{display:flex!important;grid-area:layer;min-width:0}.card-face.back{transform:rotateY(180deg)}.card-face .prompt code{font:700 .89em/1.5 ui-monospace,Consolas,monospace}.card-visual code{white-space:pre-wrap;overflow-wrap:anywhere}.card-face .example{font:600 14px/1.5 ui-monospace,Consolas,monospace;white-space:pre-wrap;text-align:left;max-width:640px;background:#e4f1fc;color:#14375b;padding:10px 13px;border-radius:8px;width:100%;max-height:156px;overflow:auto}.card-face.back .example{background:#e1f4e8}.flip .card-face:not(.back) .face-label{color:#146eac}
+.code-editor{width:100%;min-height:290px;background:#12263a!important;color:#e8f7ff!important;border:1px solid #286085!important;padding:17px!important;line-height:1.6!important;font-size:14px!important;tab-size:4;resize:vertical;white-space:pre;overflow:auto}pre.output{min-height:110px;background:#0f2835;color:#e4fff6;border-radius:13px;padding:17px;margin:0;white-space:pre-wrap;font:14px/1.6 ui-monospace,Consolas,monospace;overflow:auto}.task-list{display:grid;gap:9px}.task-prompt{margin:10px 0 0;color:#2d5b7c;font-size:14px}.code-toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.flag{display:inline-flex;gap:6px;align-items:center;background:#e4f4ff;color:#16547d;padding:5px 10px;border-radius:40px;font-size:12px;font-weight:850}.metric{border:1px solid #cce1ec;border-radius:13px;background:#f7fcff;padding:14px;text-align:center}.metric strong{display:block;font-size:24px;color:#143a5d}.slidegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px}.trace-list{counter-reset:item;display:grid;gap:7px;padding:0;margin:13px 0 0}.trace-list li{list-style:none;padding:10px 12px;background:#f4faff;border:1px solid #d1e3ef;border-radius:10px;font:14px ui-monospace,monospace}.trace-list li.current{background:#def2ff;border-color:#2581b6;box-shadow:0 0 0 2px #d0e7f8}.value-boxes{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.value-boxes span{padding:10px 14px;background:#eaf4fc;border:1px solid #c7e0ef;border-radius:10px;font:750 16px ui-monospace,monospace}.list-row{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:12px 0}.list-item{display:grid;gap:3px;min-width:72px;padding:11px 13px;border:1.5px solid #9fc7df;border-radius:11px;background:#eff9ff;text-align:center}.list-item i{font:12px ui-monospace,monospace;color:#55758b}.list-item b{font:850 21px ui-monospace,monospace;color:#153e5c}.list-item.highlight{background:#dff7e9;border-color:#3eae7b}.code-highlight{color:#aee5ff}.result-head{display:flex;justify-content:space-between;gap:7px;align-items:center;flex-wrap:wrap}.two-col{display:grid;grid-template-columns:1.4fr 1fr;gap:15px}.quiz-buttons{display:flex;justify-content:space-between;align-items:center;gap:10px}.probe{border:1px solid #cbdfe9;background:#f6fbff;border-radius:10px;padding:13px}.probe code{font-size:13px}.newtag{font-weight:850;color:#156c86}.tiplist{margin:10px 0;padding-left:22px}.tiplist li{margin:7px 0}.code-contrast{background:#102f4b;padding:12px 14px;border-radius:12px;color:#eaf9ff;overflow:auto}.code-contrast pre{margin:0;white-space:pre-wrap;tab-size:4;font:14px/1.55 ui-monospace,Consolas,monospace}button:focus-visible{outline-offset:3px}.breakdown{display:grid;gap:11px;margin-top:10px}.practice-note{background:#fff7e7;border:1px solid #efdcaf;border-radius:11px;padding:12px 14px;font-size:13px;color:#674913}.compact{font-size:13px}
+@media(max-width:760px){.two-col{grid-template-columns:1fr}.code-editor{min-height:238px}}@media(max-width:500px){.card-face{padding:15px 12px}.card-face .prompt{font-size:19px}.card-face .example{font-size:12.5px;max-height:130px}.list-item{min-width:62px;padding:9px}.cardtools .btn{padding:8px 4px;font-size:14px}.value-boxes span{font-size:13px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="header-row"><div class="kicker">Kings Norton Girls' School · Computer Science</div><a class="crumb" href="index.html">← All revision hubs</a></div>
+<h1>Year 9 · Unit 3<br>Python Next Steps <span style="font-size:.49em;color:#aeeaff;vertical-align:middle">🐍</span></h1>
+<p>Go beyond the basics. Learn how to make decisions, repeat instructions, work with lists and build reusable functions. Revise, predict, change the code and explain why it works.</p>
+<div class="hero-icons"><span>🃏 93 animated 3D flashcards</span><span>💻 Guided Python Code Lab</span><span>🔁 Loop visualiser</span><span>📋 List explorer</span><span>ƒ Function machine</span><span>🧪 Debugging &amp; testing</span><span>✅ Knowledge challenge</span></div>
+</div></header>
+<main>
+<nav class="tabs" role="tablist" aria-label="Revision hub sections">
+<button class="tab" data-tab="cards" role="tab" aria-selected="true">🃏 Flashcards</button>
+<button class="tab" data-tab="code" role="tab" aria-selected="false">💻 Code Lab</button>
+<button class="tab" data-tab="loops" role="tab" aria-selected="false">🔁 Loops</button>
+<button class="tab" data-tab="lists" role="tab" aria-selected="false">📋 Lists</button>
+<button class="tab" data-tab="functions" role="tab" aria-selected="false">ƒ Functions</button>
+<button class="tab" data-tab="map" role="tab" aria-selected="false">🧠 Mind map</button>
+<button class="tab" data-tab="notes" role="tab" aria-selected="false">📘 Notes</button>
+<button class="tab" data-tab="quiz" role="tab" aria-selected="false">✅ Quiz</button>
+</nav>
+<section id="tab-cards" class="tab-panel"><div class="panel">
+<div class="topic-header"><div><span class="eyebrow">Active recall</span><h2>Animated 3D revision flashcards</h2></div><span id="cardTopic" class="pill">Python foundations</span></div>
+<p class="muted">Try to answer the question aloud or on paper before you flip it. Work through the cards, then retry anything you found difficult.</p>
+<div class="filter-bar"><div class="field"><label for="cardFilter">Choose a topic</label><select id="cardFilter"><option value="all">All flashcards</option></select></div><button class="btn" id="cardShuffle" type="button">⇄ Shuffle</button><button class="btn" id="cardReset" type="button">Reset progress</button></div>
+<div class="meter"><span id="cardMeter"></span></div><div class="statline"><span id="gotCount">0 got it</span><span id="retryCount">0 to retry</span><span id="newCount">0 not tested</span></div>
+<div class="cardshell"><button type="button" class="flip" id="flipCard" aria-label="Flip flashcard to reveal the answer" aria-pressed="false"><span class="flip-inner"><span class="card-face front"><span class="face-label">Question · Tap to flip</span><span class="prompt" id="cardQuestion">Loading question…</span><span class="example" id="cardExample" hidden></span><span class="flip-hint">Think first, then tap to reveal</span></span><span class="card-face back"><span class="face-label">Answer · Tap to turn back</span><span class="prompt" id="cardAnswer">Loading answer…</span><span class="flip-hint">Explain the reason, not just the result</span></span></span></button></div>
+<div class="cardtools"><button class="btn retry" id="cardRetry" type="button">↻ Try again</button><button class="btn good" id="cardGot" type="button">✓ Got it</button><button class="btn" id="cardPrev" type="button">← Previous</button><button class="btn primary" id="cardNext" type="button">Next →</button></div>
+<p class="center muted small" id="cardPosition" aria-live="polite"></p>
+</div><div class="panel"><h3>Make your revision count</h3><div class="grid3"><div class="mini"><strong>1. Retrieve</strong>Answer without looking at notes.</div><div class="mini"><strong>2. Explain</strong>Explain why your answer is correct.</div><div class="mini"><strong>3. Apply</strong>Try a new example in the Code Lab.</div></div></div></section>
+<section id="tab-code" class="tab-panel" hidden><div class="panel"><span class="eyebrow">Interactive tool 1</span><h2>Guided Python Code Lab</h2>
+<p>Choose an example, change the code and press <strong>Run code</strong>. Use the input box for programmes that ask the user questions. Challenges are based on fresh scenarios rather than your assessment.</p>
+<div class="practice-note"><strong>About this tool:</strong> It is a self-contained educational Python subset, not the full Python language. It understands the commands used in these examples, including <code>print</code>, <code>input</code>, casting, <code>if</code>/<code>elif</code>/<code>else</code>, <code>for</code>/<code>while</code>, lists, functions, parameters and <code>return</code>. For all Python features, use IDLE or a proper Python editor. Code remains on your device.</div>
+<div class="field" style="margin:15px 0"><label for="taskSelect">Select a guided challenge</label><select id="taskSelect"></select></div>
+<div class="two-col"><div><div class="result-head"><h3 style="margin-bottom:7px">Python editor</h3><span class="flag">Editable code</span></div><textarea id="codeEditor" class="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Edit Python code"></textarea>
+<div class="code-toolbar"><button class="btn primary" id="runCode" type="button">▶ Run code</button><button class="btn" id="resetCode" type="button">↺ Restore example</button><button class="btn" id="codeHint" type="button">💡 Show hint</button></div><div class="field"><label for="testInputs">Test inputs, one answer per line</label><textarea rows="3" style="min-height:85px" id="testInputs" spellcheck="false" placeholder="Enter any answers the programme should receive"></textarea></div></div>
+<div><h3>Programme output</h3><pre class="output" id="consoleOutput" aria-live="polite">Press Run code to see what is printed.</pre><h3 style="margin-top:17px">Your challenge</h3><div class="mini" id="taskChallenge"></div><p id="taskHint" class="callout" hidden></p><h3 style="margin-top:17px">Current variables</h3><div class="mini compact" id="variableView">Run the programme to see values stored by the programme.</div></div></div>
+</div></section>
+<section id="tab-loops" class="tab-panel" hidden><div class="panel"><span class="eyebrow">Interactive tool 2</span><h2>Loop visualiser</h2><p>Change the numbers to see exactly which values a loop visits. Step through the iterations and compare a <code>for</code> loop with an equivalent counter-based <code>while</code> loop.</p>
+<div class="grid3"><div class="field"><label for="loopStart">Start</label><input type="number" id="loopStart" value="2" min="-15" max="20"></div><div class="field"><label for="loopStop">Stop (exclusive)</label><input type="number" id="loopStop" value="13" min="-15" max="25"></div><div class="field"><label for="loopStep">Step</label><select id="loopStep"><option value="1">+1</option><option value="2">+2</option><option value="3" selected>+3</option><option value="-1">-1</option><option value="-2">-2</option></select></div></div>
+<div class="code-contrast" style="margin-top:14px"><pre id="loopCode"></pre></div><div class="btn-bar"><button class="btn primary" id="loopNext">Next iteration →</button><button class="btn" id="loopAuto">Show all</button><button class="btn" id="loopReset">↺ Restart</button></div><div class="slidegrid"><div class="metric"><span>Current value</span><strong id="loopCurrent">–</strong></div><div class="metric"><span>Iterations shown</span><strong id="loopSeen">0</strong></div><div class="metric"><span>Total iterations</span><strong id="loopTotal">0</strong></div></div><ol class="trace-list" id="loopTrace"></ol><div class="callout" id="loopExplain">The stop value is not included in a range.</div>
+</div></section>
+<section id="tab-lists" class="tab-panel" hidden><div class="panel"><span class="eyebrow">Interactive tool 3</span><h2>List explorer: indices, updates and append</h2><p>Explore a list of fictional exhibition scores. Click an item to see its <strong>zero-based index</strong>, update its value or append another value. A running Python code log shows the corresponding instructions.</p>
+<div class="list-row" id="listItems"></div><div class="grid3"><div class="field"><label for="listIndex">Index to change</label><input id="listIndex" type="number" min="0" max="15" value="1"></div><div class="field"><label for="listValue">New value</label><input id="listValue" type="number" min="0" max="500" value="21"></div><div style="display:flex;align-items:end"><button class="btn primary" type="button" id="listUpdate" style="width:100%">Change this item</button></div></div>
+<div class="btn-bar"><button class="btn" id="listAppend">+ Append a value</button><button class="btn" id="listWalk">▶ Loop through list</button><button class="btn" id="listReset">↺ Reset list</button></div><div class="split"><div><h3>Python instructions</h3><pre class="code" id="listCode" aria-live="polite"></pre></div><div><h3>What happens?</h3><div class="mini" id="listInfo" aria-live="polite">Select a list element to explore its index.</div></div></div></div></section>
+<section id="tab-functions" class="tab-panel" hidden><div class="panel"><span class="eyebrow">Interactive tool 4</span><h2>Function machine</h2><p>Change a function's parameters and follow what happens to the returned result. Notice the difference between displaying a value with <code>print()</code> and sending one back with <code>return</code>.</p>
+<div class="grid3"><div class="field"><label for="fnChoice">Function</label><select id="fnChoice"><option value="cost">Calculate total cost</option><option value="minutes">Convert hours to minutes</option><option value="qualify">Check a target</option><option value="difference">Find the difference</option></select></div><div class="field"><label for="fnArg1" id="fnArg1Label">Price (£)</label><input id="fnArg1" type="number" value="7" min="-1000" max="1000"></div><div class="field"><label for="fnArg2" id="fnArg2Label">Quantity</label><input id="fnArg2" type="number" value="4" min="-1000" max="1000"></div></div><div class="btn-bar"><button class="btn primary" id="fnRun">▶ Call function</button></div><div class="split"><div><h3>Function code</h3><pre class="code" id="fnCode"></pre></div><div><h3>Returned value</h3><div class="metric"><strong id="fnResult">28</strong><span id="fnExplanation">The result is returned to the main programme.</span></div><div class="callout"><strong>Remember:</strong> A parameter receives an argument; <code>return</code> sends a result back to the caller.</div></div></div></div>
+<div class="panel"><h3>Bug detective</h3><p>Look at these short programmes. Predict the error first, then reveal the correction.</p><div class="exercise-list" id="debugList"></div></div></section>
+<section id="tab-map" class="tab-panel" hidden><div class="panel"><span class="eyebrow">The big picture</span><h2>Python Next Steps mind map</h2><p>Cover the keywords and explain each branch from memory before using the interactive tools.</p>
+<div class="map"><div class="branch"><h3>🔤 Types &amp; casting</h3><ul><li>Strings, integers, floats</li><li><code>int()</code>, <code>float()</code>, <code>str()</code></li><li>Reading existing code</li><li>Input and output</li></ul></div>
+<div class="branch"><h3>◇ Selection</h3><ul><li><code>if</code> / <code>elif</code> / <code>else</code></li><li>Comparison operators</li><li>Colons and indentation</li><li>Branching</li></ul></div>
+<div class="branch"><h3>🔁 Loops</h3><ul><li><code>while</code>: condition</li><li><code>for</code>: range or list</li><li>Count iterations</li><li>Avoid endless loops</li></ul></div>
+<div class="branch"><h3>📋 Lists</h3><ul><li>Ordered collections</li><li>Index begins at zero</li><li>Change an item</li><li><code>append()</code> and loop through</li></ul></div>
+<div class="branch"><h3>ƒ Functions</h3><ul><li><code>def</code> and call</li><li>Re-use instructions</li><li>Parameters / arguments</li><li>Modular programming</li></ul></div>
+<div class="branch"><h3>↩ Return &amp; test</h3><ul><li><code>return</code> a result</li><li>Store it in a variable</li><li>Syntax vs logic errors</li><li>Normal / boundary / invalid tests</li></ul></div></div>
+<div class="callout">The best revision is to <strong>read</strong> code, <strong>predict</strong> what it will do, <strong>run</strong> it, and then <strong>explain</strong> any mismatch.</div>
+</div></section>
+<section id="tab-notes" class="tab-panel" hidden><div class="panel"><span class="eyebrow">Complete notes</span><h2>Python Next Steps revision notes</h2><p>The topics follow your five teaching lessons. Use these worked examples to understand the method, then use the Code Lab with different values.</p>
+<details class="notes" open><summary>Lesson 1 · Reading code, types, casting and selection</summary><div><p>Python stores values in variables. Common data types are <strong>string</strong> (text), <strong>integer</strong> (whole number) and <strong>float</strong> (decimal number). <code>input()</code> produces text even when digits are typed.</p><pre class="code">label = "Workshop"      # a string
+visitors = int(input("How many visitors? "))
+charge = float(input("Entry price? "))
+print(label, visitors * charge)</pre><p><strong>Casting</strong> converts data types: <code>int("4")</code> becomes 4, <code>float("2.5")</code> becomes 2.5 and <code>str(8)</code> becomes "8". Joining two strings with <code>+</code> joins the text, not the quantities.</p><pre class="code">if visitors >= 12:
+    print("Group booking")
+elif visitors >= 5:
+    print("Small group")
+else:
+    print("Individual booking")</pre><p>Selection follows the first true branch. Operators include <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code> and <code>&gt;=</code>. Blocks need colons and consistent indentation.</p></div></details>
+<details class="notes"><summary>Lesson 2 · For loops and while loops</summary><div><p>A <code>for</code> loop is ideal when repeating a known number of times or visiting each item. <code>range(start, stop, step)</code> includes the start but not the stop.</p><pre class="code">for number in range(2, 9, 2):
+    print(number)  # 2, 4, 6, 8</pre><p>A <code>while</code> loop repeats while its condition is true. Ensure the loop's state can change, or it may continue indefinitely.</p><pre class="code">level = 0
+while level < 4:
+    level = level + 1
+    print(level)</pre><p>Count iterations carefully. A loop checking <code>count &lt; 4</code> does not necessarily run four times unless the counter starts and changes as expected. Test 0, 1 and several iterations.</p></div></details>
+<details class="notes"><summary>Lesson 3 · Lists, indexes, append and loops</summary><div><p>Lists organise several values together and can grow or change. The first item has index zero.</p><pre class="code">temperatures = [12, 15, 13]
+print(temperatures[0])  # 12
+temperatures[1] = 16    # replace the second item
+temperatures.append(14) # add a new item
+for temperature in temperatures:
+    print(temperature)</pre><p>Indexing a position that doesn't exist causes an <code>IndexError</code>. A list is often more efficient than dozens of separate variables.</p></div></details>
+<details class="notes"><summary>Lesson 4 · Procedures, definitions, calls and parameters</summary><div><p>In Python, a function can act as a <strong>procedure</strong> that performs an action when called. Parameters make the same code useful for different inputs.</p><pre class="code">def print_ticket(event):
+    print("Ticket for", event)
+
+print_ticket("Science fair")
+print_ticket("Art club")</pre><p>Here, <code>event</code> is a <em>parameter</em> and each supplied event name is an <em>argument</em>. Using functions removes repeated code and makes changes easier.</p></div></details>
+<details class="notes"><summary>Lesson 5 · Functions that return values</summary><div><p>Some functions do more than display information: they return a value for the calling programme to use.</p><pre class="code">def calculate_discount(price):
+    return price * 0.9
+
+sale_price = calculate_discount(30)
+print(sale_price)  # 27.0</pre><p><code>return</code> sends a value back and ends that function call. Printing is not the same as returning. Store the value and then use it in another calculation or test.</p><pre class="code">def is_large(total):
+    return total >= 25
+
+print(is_large(27))  # True</pre></div></details>
+<details class="notes"><summary>Assessment readiness · Reading, testing and debugging</summary><div><p>For every short programme, explain what each line does, track the values of variables and predict the output before you run it. Practise selecting test values that cover a <strong>normal</strong> input, a <strong>boundary</strong> and an <strong>invalid</strong> input.</p><p><strong>Syntax error:</strong> Python cannot interpret the code, for example a missing colon. <strong>Logic error:</strong> the code runs but gives the wrong result. <strong>Runtime error:</strong> a problem occurs during execution, such as using an out-of-range list index.</p><pre class="code"># Boundary example for an entry limit of 20
+# Test 19, 20 and 21 to check the decision.</pre><p><strong>Revision tip:</strong> write down what you expect, run the code and explain any difference. That is stronger practice than copying a model solution.</p></div></details>
+</div></section>
+<section id="tab-quiz" class="tab-panel" hidden><div class="panel"><span class="eyebrow">Test yourself</span><h2>Python knowledge challenge</h2><p>Sixteen fresh questions with realistic code and situations. Make a choice before the answer and explanation appear.</p><div class="meter"><span id="quizMeter"></span></div><p id="quizProgress" class="statline"></p><div id="quizQuestion"></div><div id="quizOptions" class="quiz-answers"></div><div id="quizFeedback" class="callout" hidden aria-live="polite"></div><div class="quiz-buttons" style="margin-top:15px"><button class="btn" id="quizRestart">↺ Start again</button><button class="btn primary" id="quizNext" disabled>Next question →</button></div></div></section>
+<footer>KNGS Computer Science · Year 9 Unit 3: Python Next Steps · Practise concepts, not assessment answers. Fully self-contained; Code Lab is a guided subset, not the full Python interpreter.</footer>
+</main>
+<script>/* A safe, deliberately limited educational Python subset, no eval or external libraries. */
+function runMiniPython(source, supplied=''){
+  let inputs=supplied.split(/\r?\n/), inIndex=0, output=[], steps=0, callDepth=0;
+  const globals=Object.create(null), funcs=Object.create(null);
+  const pythonStr=(v,inner=false)=>{
+    if(v===null)return 'None';
+    if(v===true)return 'True';if(v===false)return 'False';
+    if(Array.isArray(v))return '['+v.map(x=>pythonStr(x,true)).join(', ')+']';
+    if(typeof v==='string')return inner?'\''+v.replace(/'/g,"\\'")+'\'':v;
+    return String(v);
+  };
+  const issue=(kind,msg)=>{throw Error(kind+': '+msg)};
+  const lines=source.replace(/\t/g,'    ').replace(/\r/g,'').split('\n').map((raw,i)=>({indent:raw.match(/^ */)[0].length,line:raw.trim(),num:i+1})).filter(x=>x.line&&!x.line.startsWith('#'));
+  let p=0;
+  function block(indent){
+    let out=[];
+    while(p<lines.length && lines[p].indent>=indent){
+      let row=lines[p], s=row.line;
+      if(row.indent!==indent)issue('IndentationError','unexpected indent on line '+row.num);
+      if(/^(elif|else):?\b/.test(s) || s==='else:')break;
+      const isHeader=/^(if|for|while|def)\b/.test(s);
+      if(isHeader){
+        if(!s.endsWith(':'))issue('SyntaxError','expected a colon on line '+row.num);
+        let kind=s.split(' ')[0],head=s.slice(kind.length,-1).trim();p++;
+        if(p>=lines.length || lines[p].indent<=indent)issue('IndentationError','expected an indented block after line '+row.num);
+        let sub=block(lines[p].indent),node={kind,head,body:sub,num:row.num};
+        if(kind==='if'){
+          node.other=[];
+          while(p<lines.length && lines[p].indent===indent && /^(elif\b|else:)/.test(lines[p].line)){
+            let r=lines[p++],elseCase=r.line==='else:',elifCase=r.line.startsWith('elif ');
+            if(!elseCase&&!elifCase)issue('SyntaxError','invalid branch on line '+r.num);
+            if(!r.line.endsWith(':'))issue('SyntaxError','missing colon on line '+r.num);
+            if(p>=lines.length || lines[p].indent<=indent)issue('IndentationError','missing branch body on line '+r.num);
+            node.other.push({condition:elseCase?null:r.line.slice(5,-1).trim(),body:block(lines[p].indent)});
+            if(elseCase)break;
+          }
+        }
+        out.push(node);
+      }else{
+        if(s.startsWith('return ')||s==='return') out.push({kind:'return',expr:s.slice(6).trim(),num:row.num});
+        else if(s==='pass')out.push({kind:'pass',num:row.num});
+        else out.push({kind:'stmt',line:s,num:row.num});
+        p++;
+      }
+    }
+    return out;
+  }
+  const prog=lines.length?block(lines[0].indent):[];
+  if(p<lines.length)issue('SyntaxError','unexpected branch on line '+lines[p].num);
+  function tokenize(s){
+    let tokens=[],re=/\s*(?:(\d+(?:\.\d+)?)|("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*')|([A-Za-z_]\w*)|(==|!=|<=|>=|\/\/|\*\*|[()\[\],+\-*/%<>.:]))/gy;
+    let pos=0;
+    while(pos<s.length){
+      re.lastIndex=pos;let m=re.exec(s);
+      if(!m){if(/^\s*$/.test(s.slice(pos)))break;issue('SyntaxError','cannot read expression near '+s.slice(pos, pos+15));}
+      tokens.push(m[1]!==undefined?{t:'num',v:Number(m[1])}:m[2]?{t:'str',v:m[2]}:m[3]?{t:'word',v:m[3]}:{t:'op',v:m[4]});pos=re.lastIndex;
+    }
+    return tokens;
+  }
+  function evalExpr(src,local){
+    let t=tokenize(src),i=0;
+    const peek=()=>t[i]?.v;
+    function eat(v){if(peek()===v){i++;return true}return false}
+    function must(v){if(!eat(v))issue('SyntaxError','expected '+v+' in '+src)}
+    function varGet(n){if(Object.prototype.hasOwnProperty.call(local,n))return local[n];if(Object.prototype.hasOwnProperty.call(globals,n))return globals[n];issue('NameError',"name '"+n+"' is not defined")}
+    function or(){let a=and();while(eat('or')){let b=and();a=Boolean(a)||Boolean(b)}return a}
+    function and(){let a=compare();while(eat('and')){let b=compare();a=Boolean(a)&&Boolean(b)}return a}
+    function compare(){let a=add();while(['==','!=','>','<','>=','<='].includes(peek())){let op=t[i++].v,b=add();a=op==='=='?a===b:op==='!='?a!==b:op==='>'?a>b:op==='<'?a<b:op==='>='?a>=b:a<=b}return a}
+    function add(){let a=mul();while(['+','-'].includes(peek())){let op=t[i++].v,b=mul();if(op==='+'){if(typeof a===typeof b && (typeof a==='number'||typeof a==='string'))a+=b;else issue('TypeError','cannot add different types without casting')}else{if(typeof a!=='number'||typeof b!=='number')issue('TypeError','subtraction needs numbers');a-=b}}return a}
+    function mul(){let a=unary();while(['*','/','//','%'].includes(peek())){let op=t[i++].v,b=unary();if(typeof a!=='number'||typeof b!=='number')issue('TypeError','arithmetic needs numbers');if(b===0 && op!=='*')issue('ZeroDivisionError','division by zero');a=op==='*'?a*b:op==='/'?a/b:op==='//'?Math.floor(a/b):a%b}return a}
+    function unary(){if(eat('-')){let x=unary();if(typeof x!=='number')issue('TypeError','unary minus needs a number');return -x}if(eat('not'))return !Boolean(unary());return atom()}
+    function callFn(name,args){
+      if(name==='input'){if(inIndex>=inputs.length)issue('EOFError','provide more values in the Test inputs box');return inputs[inIndex++]}
+      if(name==='int'){let n=Number(args[0]);if(typeof args[0]==='string'&&!/^[+-]?\d+$/.test(args[0].trim()) || !Number.isFinite(n))issue('ValueError','int() needs a whole number');return Math.trunc(n)}
+      if(name==='float'){let n=Number(args[0]);if(!Number.isFinite(n))issue('ValueError','float() needs a number');return n}
+      if(name==='str')return pythonStr(args[0]);
+      if(name==='len'){if(!Array.isArray(args[0]) && typeof args[0]!=='string')issue('TypeError','len() needs a collection');return args[0].length}
+      if(name==='range'){
+        let [start,stop,step]=args.length===1?[0,args[0],1]:[args[0],args[1],args[2]===undefined?1:args[2]];
+        if(![start,stop,step].every(Number.isInteger)||step===0)issue('ValueError','range() needs integer values and a nonzero step');let result=[];
+        for(let j=start;step>0?j<stop:j>stop;j+=step){result.push(j);if(result.length>150)issue('RuntimeError','range is too large for this practice runner')}
+        return result;
+      }
+      if(name==='round')return Math.round(args[0]*10**(args[1]||0))/10**(args[1]||0);
+      if(name==='print'){output.push(args.map(x=>pythonStr(x)).join(' '));return null}
+      if(!funcs[name])issue('NameError',"function '"+name+"' is not defined");
+      let fn=funcs[name];if(fn.params.length!==args.length)issue('TypeError',name+'() expects '+fn.params.length+' argument(s)');
+      if(++callDepth>12)issue('RuntimeError','too many nested function calls');
+      let frame=Object.create(null);fn.params.forEach((nm,j)=>frame[nm]=args[j]);let result=exec(fn.body,frame,true);callDepth--;return result.returned?result.value:null;
+    }
+    function atom(){
+      let a;
+      if(eat('(')){a=or();must(')')}
+      else if(eat('[')){a=[];if(!eat(']')){do{a.push(or())}while(eat(','));must(']')}}
+      else if(!t[i])issue('SyntaxError','incomplete expression: '+src);
+      else if(t[i].t==='num'){a=t[i++].v}
+      else if(t[i].t==='str'){let str=t[i++].v;a=str.slice(1,-1).replace(/\\n/g,'\n').replace(/\\([\\'\"])/g,'$1')}
+      else if(t[i].t==='word'){
+        let name=t[i++].v;
+        if(name==='True')a=true;else if(name==='False')a=false;else if(name==='None')a=null;
+        else if(eat('(')){let args=[];if(!eat(')')){do{args.push(or())}while(eat(','));must(')')}a=callFn(name,args)}
+        else a=varGet(name);
+      }else issue('SyntaxError','unexpected token '+peek());
+      while(peek()==='['){eat('[');let ix=or();must(']');if(!Array.isArray(a)&&typeof a!=='string')issue('TypeError','only collections can be indexed');if(!Number.isInteger(ix))issue('TypeError','index must be integer');if(ix<0)ix+=a.length;if(ix<0||ix>=a.length)issue('IndexError','list/string index out of range');a=a[ix]}
+      return a;
+    }
+    let r=or();if(i<t.length)issue('SyntaxError','unexpected token '+peek());return r;
+  }
+  function exec(nodes,local,inFunction=false){
+    for(const node of nodes){
+      if(++steps>450)issue('RuntimeError','step limit reached: check for an infinite loop');
+      if(node.kind==='pass')continue;
+      if(node.kind==='return'){if(!inFunction)issue('SyntaxError',"'return' outside function");return {returned:true,value:node.expr?evalExpr(node.expr,local):null}}
+      if(node.kind==='def'){
+        let m=/^([A-Za-z_]\w*)\(([^()]*)\)$/.exec(node.head);
+        if(!m)issue('SyntaxError','invalid function definition at line '+node.num);
+        let params=m[2].trim()?m[2].split(',').map(s=>s.trim()):[];
+        if(!params.every(n=>/^[A-Za-z_]\w*$/.test(n)))issue('SyntaxError','invalid parameter');
+        funcs[m[1]]={params,body:node.body};continue;
+      }
+      if(node.kind==='if'){
+        let body=evalExpr(node.head,local)?node.body:null;
+        if(!body){for(const b of node.other){if(b.condition===null||evalExpr(b.condition,local)){body=b.body;break}}}
+        if(body){let z=exec(body,local,inFunction);if(z.returned)return z}continue;
+      }
+      if(node.kind==='while'){
+        let loops=0;
+        while(evalExpr(node.head,local)){if(++loops>160)issue('RuntimeError','loop limit reached: check the condition');let z=exec(node.body,local,inFunction);if(z.returned)return z}continue;
+      }
+      if(node.kind==='for'){
+        let m=/^([A-Za-z_]\w*)\s+in\s+(.+)$/.exec(node.head);if(!m)issue('SyntaxError','for must use a variable and a sequence');
+        let values=evalExpr(m[2],local);if(!Array.isArray(values))issue('TypeError','for needs a list or range');
+        for(const item of values){local[m[1]]=item;let z=exec(node.body,local,inFunction);if(z.returned)return z}continue;
+      }
+      let s=node.line;
+      let append=/^([A-Za-z_]\w*)\.append\((.+)\)$/.exec(s);
+      if(append){let arr=local[append[1]]??globals[append[1]];if(!Array.isArray(arr))issue('AttributeError','append() needs a list');arr.push(evalExpr(append[2],local));continue}
+      let assignment=/^([A-Za-z_]\w*)(?:\[([^\]]+)\])?\s*=\s*(?!=)(.+)$/.exec(s);
+      if(assignment){let val=evalExpr(assignment[3],local),name=assignment[1];if(assignment[2]!==undefined){let arr=local[name]??globals[name],ix=evalExpr(assignment[2],local);if(!Array.isArray(arr))issue('TypeError','indexed assignment needs a list');if(!Number.isInteger(ix)||ix<0||ix>=arr.length)issue('IndexError','assignment index out of range');arr[ix]=val}else local[name]=val;continue}
+      evalExpr(s,local);
+    }
+    return {returned:false,value:null};
+  }
+  try{exec(prog,globals,false);return {ok:true,text:output.length?output.join('\n'):'(No output was printed.)',variables:Object.fromEntries(Object.entries(globals).filter(([_,v])=>typeof v!=='function'))}}
+  catch(err){return {ok:false,text:'⚠ '+err.message+'\nCheck the line, indentation, types and test inputs.',variables:Object.fromEntries(Object.entries(globals))}}
+}
+
+'use strict';
+const CARDS=[{"topic": "Python foundations", "q": "What does the expression `\"8\" + \"4\"` produce in Python?", "a": "The string `\"84\"`. Adding two strings joins their characters rather than adding numbers."}, {"topic": "Python foundations", "q": "How can a value typed with `input()` be turned into a whole number?", "a": "Use `int(input(...))`. Input initially returns text, even if the user types digits."}, {"topic": "Python foundations", "q": "What is the difference between `int`, `float` and `str`?", "a": "`int` stores whole numbers, `float` stores numbers with decimal parts, and `str` stores text."}, {"topic": "Python foundations", "q": "What is type casting?", "a": "Converting a value to another data type, for example `float(\"3.5\")`."}, {"topic": "Python foundations", "q": "Why is `int(\"7.2\")` not a valid conversion?", "a": "The text contains a decimal part, so it cannot be interpreted directly as an integer. Use `float()` first if needed."}, {"topic": "Python foundations", "q": "What does `str(42)` return?", "a": "The text `\"42\"`, which can be joined with other strings."}, {"topic": "Python foundations", "q": "What does `print(\"Level\", 3)` display?", "a": "`Level 3`. Print can separate different arguments with a space."}, {"topic": "Python foundations", "q": "How is assignment different from comparison?", "a": "`=` stores a value in a variable. `==` compares two values for equality."}, {"topic": "Python foundations", "q": "What does `total = total + 2` do?", "a": "Updates `total` by increasing its current value by 2."}, {"topic": "Python foundations", "q": "What does `float(\"6\")` return?", "a": "The number `6.0`, stored as a floating-point value."}, {"topic": "Python foundations", "q": "Why might `print(\"Total: \" + cost)` fail when cost is an integer?", "a": "You cannot join a string and integer using `+`. Convert it with `str(cost)` or use separate print arguments."}, {"topic": "Python foundations", "q": "What is a dry run of a program?", "a": "Following its instructions by hand and recording how values and outputs change."}, {"topic": "Python foundations", "q": "What is an IDE?", "a": "An integrated development environment: software used to write, run and debug code."}, {"topic": "Python foundations", "q": "What does indentation indicate in Python?", "a": "Which lines belong inside a statement such as an `if`, loop or function."}, {"topic": "Selection and comparisons", "q": "When does an `if` block run?", "a": "Only when its condition evaluates to `True`."}, {"topic": "Selection and comparisons", "q": "What does the operator `!=` test?", "a": "Whether two values are not equal."}, {"topic": "Selection and comparisons", "q": "What does `>=` mean?", "a": "Greater than or equal to."}, {"topic": "Selection and comparisons", "q": "What is the role of `elif`?", "a": "It checks another condition only when preceding `if` or `elif` branches were false."}, {"topic": "Selection and comparisons", "q": "When is the `else` block used?", "a": "When none of the preceding conditions in that selection statement are true."}, {"topic": "Selection and comparisons", "q": "Why must a Python `if` condition end with `:`?", "a": "The colon introduces the indented block that belongs to the selection statement."}, {"topic": "Selection and comparisons", "q": "If `points = 11`, is `points > 11` true?", "a": "No. `>` means strictly greater; equality alone is not enough."}, {"topic": "Selection and comparisons", "q": "If `miles = 8`, is `miles <= 8` true?", "a": "Yes. The expression includes values equal to eight."}, {"topic": "Selection and comparisons", "q": "What will this display when `age = 13`?", "a": "`Young explorer`, because 13 is below 16.", "code": "if age < 16:\n    print(\"Young explorer\")\nelse:\n    print(\"Older explorer\")"}, {"topic": "Selection and comparisons", "q": "What is selection in an algorithm?", "a": "Making a decision and following a particular path based on a condition."}, {"topic": "Selection and comparisons", "q": "Why put the most specific range check first in an `if`/`elif` chain?", "a": "Once a true branch runs, later branches are skipped. The order affects which outcome is chosen."}, {"topic": "Selection and comparisons", "q": "What error occurs if an `if` body is not indented?", "a": "An `IndentationError` in Python."}, {"topic": "Selection and comparisons", "q": "How can you compare two strings for equality?", "a": "Use `==`, for example `answer == \"blue\"`. Case differences matter."}, {"topic": "Loops", "q": "When is a `for` loop particularly useful?", "a": "When you know how many repetitions or items you want to process."}, {"topic": "Loops", "q": "When is a `while` loop useful?", "a": "When you want to keep repeating as long as a condition remains true."}, {"topic": "Loops", "q": "How many times does `for n in range(5):` run?", "a": "Five times, with n taking 0, 1, 2, 3 and 4."}, {"topic": "Loops", "q": "What numbers are generated by `range(3, 7)`?", "a": "3, 4, 5 and 6. The stop value is excluded."}, {"topic": "Loops", "q": "What does `range(2, 11, 3)` generate?", "a": "2, 5 and 8. It steps by 3 while staying below 11."}, {"topic": "Loops", "q": "What causes an infinite loop?", "a": "A repeating condition that never becomes false and has no other exit."}, {"topic": "Loops", "q": "What does an iteration mean?", "a": "One complete repetition of a loop body."}, {"topic": "Loops", "q": "How can you make a counter-controlled `while` loop finish?", "a": "Update its counter inside the loop so the continuation condition eventually becomes false."}, {"topic": "Loops", "q": "What output comes from this code?", "a": "`0`, `2`, `4` on separate lines.", "code": "for x in range(0, 6, 2):\n    print(x)"}, {"topic": "Loops", "q": "What is the final value of `n`?", "a": "3, because the loop increments it until `n < 3` becomes false.", "code": "n = 0\nwhile n < 3:\n    n = n + 1"}, {"topic": "Loops", "q": "Why can a `for` loop be shorter than an equivalent counter-based `while` loop?", "a": "The `for` loop automatically steps through the range or list, so no separate counter update is needed."}, {"topic": "Loops", "q": "What is a loop condition?", "a": "An expression tested to decide whether the loop should continue."}, {"topic": "Loops", "q": "Why should loops be tested at their boundaries?", "a": "To catch off-by-one mistakes and confirm the first and last expected repetitions."}, {"topic": "Loops", "q": "What does `for item in items:` do?", "a": "Processes each element of `items` in order, setting `item` to each value in turn."}, {"topic": "Lists and indexing", "q": "What is a Python list?", "a": "An ordered, changeable collection of values, stored under one variable name."}, {"topic": "Lists and indexing", "q": "Which index identifies the first item in a list?", "a": "Index 0."}, {"topic": "Lists and indexing", "q": "Which index selects the third value in a list?", "a": "Index 2."}, {"topic": "Lists and indexing", "q": "How do you add one new value to the end of a list?", "a": "Use `.append(value)`."}, {"topic": "Lists and indexing", "q": "How can the first item of a list called `pets` be updated?", "a": "Assign to index 0, for example `pets[0] = \"cat\"`."}, {"topic": "Lists and indexing", "q": "What does `len(items)` tell you?", "a": "The number of elements in the list."}, {"topic": "Lists and indexing", "q": "Why might a list be better than six separate variables?", "a": "Related values stay together and a loop can process all items without repeating code."}, {"topic": "Lists and indexing", "q": "How do you read the second item in `scores`?", "a": "Use `scores[1]`."}, {"topic": "Lists and indexing", "q": "What happens if you access `colours[5]` when the list has only three items?", "a": "Python raises an `IndexError` because index 5 does not exist."}, {"topic": "Lists and indexing", "q": "What does `print(fruits)` normally show?", "a": "A representation of the full list, including its brackets and elements."}, {"topic": "Lists and indexing", "q": "What will this print?", "a": "`lime`, because index 1 refers to the second element.", "code": "fruit = [\"plum\", \"lime\", \"pear\"]\nprint(fruit[1])"}, {"topic": "Lists and indexing", "q": "What will be the final length of this list?", "a": "4, because append adds a new element.", "code": "nums = [3, 6, 9]\nnums.append(12)"}, {"topic": "Lists and indexing", "q": "Why does changing a list element not necessarily change the length of the list?", "a": "Replacing an existing element keeps the same number of positions."}, {"topic": "Lists and indexing", "q": "How do you visit each name in a list?", "a": "Use `for name in names:` followed by an indented action."}, {"topic": "Lists and indexing", "q": "What is the difference between indexing and appending?", "a": "Indexing accesses or changes an existing element; appending creates a new one at the end."}, {"topic": "Functions and parameters", "q": "How do you begin defining a function named `show_menu`?", "a": "Write `def show_menu():` followed by indented instructions."}, {"topic": "Functions and parameters", "q": "What is a function call?", "a": "An instruction that runs a previously defined function, such as `show_menu()`."}, {"topic": "Functions and parameters", "q": "Why are functions useful for repeated code?", "a": "They reduce duplication, improve readability and let you fix a shared action in one place."}, {"topic": "Functions and parameters", "q": "What does a parameter do?", "a": "It names a value the function receives when called."}, {"topic": "Functions and parameters", "q": "What is an argument?", "a": "The actual value supplied to a function when it is called."}, {"topic": "Functions and parameters", "q": "What happens in `greet(\"Sam\")` if `greet` takes `name` as its parameter?", "a": "Inside `greet`, the local parameter `name` receives `\"Sam\"`."}, {"topic": "Functions and parameters", "q": "Why must a function be defined before it is called during execution?", "a": "Python needs to have executed the `def` statement so the function name exists."}, {"topic": "Functions and parameters", "q": "What does `def` mean in Python?", "a": "It introduces the definition of a function."}, {"topic": "Functions and parameters", "q": "What does the colon do at the end of a function header?", "a": "Introduces the indented body of the function."}, {"topic": "Functions and parameters", "q": "What is modular programming?", "a": "Breaking a larger program into smaller, reusable parts such as functions."}, {"topic": "Functions and parameters", "q": "What will this code display?", "a": "`Hi, Mia` when the function is called.", "code": "def hello(who):\n    print(\"Hi,\", who)\n\nhello(\"Mia\")"}, {"topic": "Functions and parameters", "q": "Can the same function be called with different arguments?", "a": "Yes. Each call can provide a different value for its parameters."}, {"topic": "Functions and parameters", "q": "Why is a meaningful function name useful?", "a": "It explains the function’s purpose and makes the code easier to follow."}, {"topic": "Return values", "q": "What is the job of `return` in a function?", "a": "To send a result back to the calling code and end that function call."}, {"topic": "Return values", "q": "How is printing a value different from returning it?", "a": "`print` displays a value; `return` passes it back so another part of the program can use it."}, {"topic": "Return values", "q": "How can a returned result be saved?", "a": "Assign the function call to a variable, for example `area = rectangle_area(4, 3)`."}, {"topic": "Return values", "q": "What happens when a function reaches `return`?", "a": "That call stops executing and passes the return value to its caller."}, {"topic": "Return values", "q": "What will be stored in `result`?", "a": "14, because the function adds 4 to 10.", "code": "def add_four(number):\n    return number + 4\n\nresult = add_four(10)"}, {"topic": "Return values", "q": "What does a function without an explicit `return` normally return?", "a": "`None`."}, {"topic": "Return values", "q": "What is the difference between a parameter and a return value?", "a": "A parameter is information sent in; a return value is information sent back."}, {"topic": "Return values", "q": "What will this print?", "a": "8, because the function multiplies 2 by 4.", "code": "def product(a, b):\n    return a * b\n\nprint(product(2, 4))"}, {"topic": "Return values", "q": "Why might a function return a value instead of displaying it directly?", "a": "The result may need to be stored, compared or used in another calculation."}, {"topic": "Return values", "q": "Can the result from one function be passed into another?", "a": "Yes. The returned value can be used as an argument in a different call."}, {"topic": "Return values", "q": "What will `is_even(6)` return?", "a": "`True`, because 6 has remainder zero when divided by two.", "code": "def is_even(n):\n    return n % 2 == 0"}, {"topic": "Return values", "q": "Why is `return` usually placed inside an indented function body?", "a": "It is part of the function and cannot return a value from outside a function."}, {"topic": "Testing and debugging", "q": "What is a syntax error?", "a": "Code that breaks the grammar rules of Python, such as a missing colon."}, {"topic": "Testing and debugging", "q": "What is a logic error?", "a": "Code that runs but gives the wrong result because the instructions or conditions are incorrect."}, {"topic": "Testing and debugging", "q": "What is debugging?", "a": "Finding, understanding and correcting mistakes in a program."}, {"topic": "Testing and debugging", "q": "Why carry out a dry run?", "a": "To track values and predict the output before or while testing code."}, {"topic": "Testing and debugging", "q": "What is a normal test case?", "a": "A typical input that checks everyday expected behaviour."}, {"topic": "Testing and debugging", "q": "What is a boundary test case?", "a": "An input at or immediately next to the limit of a condition."}, {"topic": "Testing and debugging", "q": "What is an invalid-input test?", "a": "A value outside the expected input type or range, to see how the program handles it."}, {"topic": "Testing and debugging", "q": "Why test a loop with zero repetitions if that is possible?", "a": "To ensure it behaves correctly when its body should not run."}, {"topic": "Testing and debugging", "q": "What is an off-by-one error?", "a": "A mistake that causes one too many or one too few loop repetitions or positions."}, {"topic": "Testing and debugging", "q": "What might cause `TypeError` when adding user input to a number?", "a": "Input is a string until converted, so mixing it with a number using `+` may fail."}, {"topic": "Testing and debugging", "q": "How would you test a function that returns a price?", "a": "Call it with different known amounts and check each result matches the expected calculation."}, {"topic": "Testing and debugging", "q": "Why should a corrected bug be retested?", "a": "To confirm the fix works and has not introduced another problem."}];
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
+const codeMarkup=s=>esc(s).replace(/`([^`]+)`/g,'<code class="code-inline">$1</code>');
+function safeLoad(k, fallback){try{return JSON.parse(localStorage.getItem(k))??fallback}catch(e){return fallback}}
+function safeSave(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+// Navigation
+const tabs=[...document.querySelectorAll('.tab')];
+function openTab(id){tabs.forEach(b=>{let on=b.dataset.tab===id;b.setAttribute('aria-selected',String(on));$('tab-'+b.dataset.tab).hidden=!on});}
+tabs.forEach(b=>b.addEventListener('click',()=>openTab(b.dataset.tab)));
+// Flashcards
+const storageKey='KNGS-y9u3-card-progress-v1';
+let marked=safeLoad(storageKey,{}),deck=CARDS.map((_,i)=>i),pos=0;
+const themes=[...new Set(CARDS.map(x=>x.topic))];
+themes.forEach(t=>{$('cardFilter').insertAdjacentHTML('beforeend',`<option value="${esc(t)}">${esc(t)}</option>`)});
+function redrawCard(){
+ const id=deck[pos],item=CARDS[id];if(!item)return;
+ $('flipCard').classList.remove('is-flipped');$('flipCard').setAttribute('aria-pressed','false');
+ $('cardTopic').textContent=item.topic;
+ $('cardQuestion').innerHTML=codeMarkup(item.q);$('cardAnswer').innerHTML=codeMarkup(item.a);
+ $('cardExample').hidden=!item.code;$('cardExample').textContent=item.code||'';
+ $('cardPosition').textContent=`Card ${pos+1} of ${deck.length}. Tap the card to flip, then mark your progress.`;
+ const st=deck.map(i=>marked[i]);let got=st.filter(v=>v==='got').length,retry=st.filter(v=>v==='retry').length;
+ $('gotCount').textContent=got+' got it';$('retryCount').textContent=retry+' to retry';$('newCount').textContent=(deck.length-got-retry)+' not tested';
+ $('cardMeter').style.width=(100*(got+retry)/deck.length)+'%';
+}
+function filterCards(){let topic=$('cardFilter').value;deck=CARDS.map((_,i)=>i).filter(i=>topic==='all'||CARDS[i].topic===topic);pos=0;redrawCard()}
+$('cardFilter').addEventListener('change',filterCards);
+$('flipCard').addEventListener('click',()=>{let on=$('flipCard').classList.toggle('is-flipped');$('flipCard').setAttribute('aria-pressed',String(on))});
+function stepCard(step){pos=(pos+step+deck.length)%deck.length;redrawCard()}
+$('cardNext').onclick=()=>stepCard(1);$('cardPrev').onclick=()=>stepCard(-1);
+$('cardGot').onclick=()=>{marked[deck[pos]]='got';safeSave(storageKey,marked);stepCard(1)};
+$('cardRetry').onclick=()=>{marked[deck[pos]]='retry';safeSave(storageKey,marked);stepCard(1)};
+$('cardShuffle').onclick=()=>{for(let i=deck.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}pos=0;redrawCard()};
+$('cardReset').onclick=()=>{if(confirm('Reset your progress on all Year 9 Unit 3 flashcards?')){marked={};safeSave(storageKey,marked);redrawCard()}};
+redrawCard();
+// Guided code lab
+const TASKS=[
+{title:'1. Strings, numbers and input',input:'5\n8',code:'first = input("First value: ")\nsecond = input("Second value: ")\nprint("Text joined:", first + second)\nprint("Total:", int(first) + int(second))',challenge:'Change the programme so it prints the difference between the two entered numbers.',hint:'Cast both inputs to int before subtracting. Try changing the test inputs.'},
+{title:'2. Selection with three branches',input:'17',code:'score = int(input("Number of points: "))\nif score >= 20:\n    print("Gold badge")\nelif score >= 12:\n    print("Silver badge")\nelse:\n    print("Keep collecting points")',challenge:'Change the Gold threshold to 25, then test 11, 12, 24 and 25. Which branch runs each time?',hint:'The first true condition wins. Test directly on either side of a boundary.'},
+{title:'3. A counted for loop',input:'',code:'for year in range(1, 5):\n    print("Year", year)',challenge:'Make the loop display Year 3 through Year 8, including both end years.',hint:'range() excludes the stop value, so use a stop just beyond your final year.'},
+{title:'4. A condition-controlled while loop',input:'',code:'counter = 2\nwhile counter < 11:\n    print(counter)\n    counter = counter + 3',challenge:'Change the steps to print 4, 8, 12 and 16. Avoid an infinite loop.',hint:'Change the start, the stop condition and the amount added to the counter.'},
+{title:'5. Change and append to a list',input:'',code:'scores = [6, 11, 8]\nscores[0] = 9\nscores.append(14)\nprint(scores)\nprint("Count:", len(scores))',challenge:'Add a fifth score and show the final number of scores.',hint:'Use scores.append(value), and remember the first position is index zero.'},
+{title:'6. Iterate through list values',input:'',code:'colours = ["amber", "violet", "teal"]\nfor colour in colours:\n    print("I chose", colour)',challenge:'Add another colour and make each line begin with Favourite: instead.',hint:'The loop variable is given each element in order. Change the list and the print statement.'},
+{title:'7. Reusable function with a parameter',input:'',code:'def greet(person):\n    print("Welcome", person)\n\ngreet("Asha")\ngreet("Rosa")',challenge:'Add a third call with a different name without copying the print statement.',hint:'Call the existing function again and supply the name as its argument.'},
+{title:'8. Function returning a number',input:'',code:'def total_price(price, quantity):\n    return price * quantity\n\namount = total_price(7, 4)\nprint("Price:", amount)',challenge:'Change the function so it also adds a fixed £2 booking charge.',hint:'Add 2 inside the return expression rather than changing the printed text.'},
+{title:'9. Return a Boolean from a function',input:'',code:'def is_eligible(age):\n    return age >= 16\n\nresult = is_eligible(18)\nprint(result)',challenge:'Change the test to call is_eligible(15), and explain the returned value.',hint:'The comparison expression returns True or False.'},
+{title:'10. Debug a broken selection',input:'9',code:'level = int(input("Level: "))\nif level > 10\nprint("Advanced")\nelse:\n    print("Starter")',challenge:'Find two syntax/indentation errors, correct them and run with values 9 and 11.',hint:'A Python if requires a colon, and its instructions must be indented.'}
+];
+TASKS.forEach((t,i)=>$('taskSelect').insertAdjacentHTML('beforeend',`<option value="${i}">${esc(t.title)}</option>`));
+function loadTask(){let task=TASKS[Number($('taskSelect').value)];$('codeEditor').value=task.code;$('testInputs').value=task.input;$('taskChallenge').textContent=task.challenge;$('taskHint').hidden=true;$('consoleOutput').textContent='Press Run code to test your changes.';$('variableView').textContent='Variables will appear after running.'}
+$('taskSelect').addEventListener('change',loadTask);$('resetCode').onclick=loadTask;
+$('codeHint').onclick=()=>{$('taskHint').textContent=TASKS[Number($('taskSelect').value)].hint;$('taskHint').hidden=!$('taskHint').hidden};
+$('runCode').onclick=()=>{
+ let res;try{res=runMiniPython($('codeEditor').value,$('testInputs').value)}catch(err){res={ok:false,text:'⚠ '+err.message+'\nCheck your colons, indentation and Python syntax.',variables:{}}}
+ $('consoleOutput').textContent=res.text;
+ let entries=Object.entries(res.variables||{});$('variableView').textContent=entries.length?entries.map(([k,v])=>k+' = '+(typeof v==='string'?JSON.stringify(v):JSON.stringify(v))).join('\n'):'No top-level variables are currently stored.';
+};
+// Convenient tab indentation when editing Python
+$('codeEditor').addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();let el=e.target,s=el.selectionStart,end=el.selectionEnd;el.value=el.value.slice(0,s)+'    '+el.value.slice(end);el.selectionStart=el.selectionEnd=s+4}});
+loadTask();
+// Loop visualiser
+let loopValues=[],loopAt=0;
+function refreshLoop(){
+ let a=Number($('loopStart').value),b=Number($('loopStop').value),st=Number($('loopStep').value);
+ a=Math.max(-15,Math.min(20,Math.trunc(a||0)));b=Math.max(-15,Math.min(25,Math.trunc(b||0)));
+ loopValues=[];for(let i=a;st>0?i<b:i>b;i+=st){loopValues.push(i);if(loopValues.length>=60)break}
+ loopAt=0;$('loopCode').textContent=`for n in range(${a}, ${b}, ${st}):\n    print(n)\n\n# Same pattern with a while loop:\nn = ${a}\nwhile n ${st>0?'<':'>'} ${b}:\n    print(n)\n    n = n + (${st})`;
+ renderLoop()
+}
+function renderLoop(){
+ $('loopSeen').textContent=loopAt;$('loopTotal').textContent=loopValues.length;$('loopCurrent').textContent=loopAt?loopValues[loopAt-1]:'–';
+ $('loopTrace').innerHTML=loopAt?loopValues.slice(0,loopAt).map((n,i)=>`<li class="${i===loopAt-1?'current':''}">Iteration ${i+1}: n = ${n}, print(${n})</li>`).join(''):'<li>No iterations shown yet. Press Next iteration.</li>';
+ $('loopExplain').textContent=loopValues.length===0?'This range produces no values: its start, stop and step do not allow a first iteration.':loopAt===loopValues.length?'All iterations complete. The next value would reach or pass the stop value.':`There are ${loopValues.length-loopAt} iteration(s) still to examine. The stop value is always excluded.`;
+}
+['loopStart','loopStop','loopStep'].forEach(id=>$(id).addEventListener('change',refreshLoop));
+$('loopNext').onclick=()=>{if(loopAt<loopValues.length)loopAt++;renderLoop()};$('loopAuto').onclick=()=>{loopAt=loopValues.length;renderLoop()};$('loopReset').onclick=()=>{loopAt=0;renderLoop()};refreshLoop();
+// Lists lab
+let values=[],selected=-1,actions=[];
+const showList=()=>{
+ $('listItems').innerHTML=values.map((v,i)=>`<button type="button" class="list-item ${i===selected?'highlight':''}" data-ix="${i}" aria-label="Select index ${i}, value ${v}"><i>index ${i}</i><b>${v}</b></button>`).join('');
+ $('listCode').textContent='scores = [10, 13, 7, 18]\n'+actions.join('\n');
+};
+function resetList(){values=[10,13,7,18];selected=-1;actions=[];$('listInfo').textContent='Select an item to see how zero-based indexing works.';showList()}
+$('listItems').addEventListener('click',e=>{let b=e.target.closest('[data-ix]');if(!b)return;selected=Number(b.dataset.ix);$('listIndex').value=selected;$('listInfo').textContent=`scores[${selected}] is ${values[selected]}. Remember: the first element has index 0.`;showList()});
+$('listUpdate').onclick=()=>{let i=Number($('listIndex').value),n=Number($('listValue').value);if(!Number.isInteger(i)||i<0||i>=values.length||!Number.isFinite(n)){ $('listInfo').textContent='Select an existing whole-number index and enter a valid number.';return;}values[i]=n;selected=i;actions.push(`scores[${i}] = ${n}`);$('listInfo').textContent=`Updated index ${i}. This replaced an element; it did not change the list length.`;showList()};
+$('listAppend').onclick=()=>{if(values.length>=10){$('listInfo').textContent='This activity keeps lists to ten elements.';return}let n=Number($('listValue').value);if(!Number.isFinite(n))return;values.push(n);actions.push(`scores.append(${n})`);selected=values.length-1;$('listInfo').textContent=`Appended ${n} at index ${selected}. The list now contains ${values.length} values.`;showList()};
+$('listWalk').onclick=()=>{actions.push('for score in scores:\n    print(score)');$('listInfo').textContent='Output from the loop: '+values.join(', ')+'. The loop visits each item in order.';selected=-1;showList()};$('listReset').onclick=resetList;resetList();
+// Function machine
+const machine={
+ cost:{l1:'Price (£)',l2:'Quantity',code:(a,b)=>`def total_cost(price, quantity):\n    return price * quantity\n\nresult = total_cost(${a}, ${b})\nprint(result)`,calc:(a,b)=>a*b},
+ minutes:{l1:'Hours',l2:'Not used',code:(a,b)=>`def to_minutes(hours):\n    return hours * 60\n\nresult = to_minutes(${a})\nprint(result)`,calc:(a,b)=>a*60},
+ qualify:{l1:'Score',l2:'Target',code:(a,b)=>`def reached_target(score, target):\n    return score >= target\n\nresult = reached_target(${a}, ${b})\nprint(result)`,calc:(a,b)=>a>=b},
+ difference:{l1:'First number',l2:'Second number',code:(a,b)=>`def difference(a, b):\n    return a - b\n\nresult = difference(${a}, ${b})\nprint(result)`,calc:(a,b)=>a-b}
+};
+function refreshFn(){let x=machine[$('fnChoice').value],a=Number($('fnArg1').value),b=Number($('fnArg2').value);$('fnArg1Label').textContent=x.l1;$('fnArg2Label').textContent=x.l2;$('fnArg2').disabled=x.l2==='Not used';$('fnCode').textContent=x.code(a,b);let result=x.calc(a,b);$('fnResult').textContent=typeof result==='boolean'?(result?'True':'False'):String(result);$('fnExplanation').textContent='The function returns the value above. It can then be saved in result and printed or used elsewhere.'}
+['fnChoice','fnArg1','fnArg2'].forEach(k=>$(k).addEventListener('change',refreshFn));$('fnRun').onclick=refreshFn;refreshFn();
+const BUGS=[
+{q:'A conditional statement prints the wrong path',code:'speed = 5\nif speed = 5:\n    print("Steady")',why:'A condition uses == to compare. The single = is for assigning a value.',fixed:'if speed == 5:'},
+{q:'A loop never stops',code:'turn = 0\nwhile turn < 4:\n    print(turn)',why:'The variable turn is never updated, so the condition remains true.',fixed:'Add turn = turn + 1 inside the loop.'},
+{q:'An extra list position is requested',code:'animals = ["fox", "owl"]\nprint(animals[2])',why:'Two items have indices 0 and 1. Index 2 is outside the list.',fixed:'Use animals[1] for the second item, or append another item first.'},
+{q:'The result is printed, but not returned',code:'def double(n):\n    print(n * 2)\nresult = double(6)',why:'print only displays 12; without return, result receives None.',fixed:'Replace print(n * 2) with return n * 2.'},
+{q:'Text is added to a number',code:'quantity = input("Quantity: ")\ntotal = quantity + 4',why:'input returns a string. Python cannot add that string to an integer.',fixed:'Cast first: quantity = int(input("Quantity: "))'}
+];
+$('debugList').innerHTML=BUGS.map((b,i)=>`<div class="line-card"><strong>${i+1}. ${esc(b.q)}</strong><pre class="code">${esc(b.code)}</pre><details><summary style="cursor:pointer;font-weight:800;color:#176c9f">Reveal bug and fix</summary><p>${esc(b.why)}</p><p><strong>Fix:</strong> ${esc(b.fixed)}</p></details></div>`).join('');
+// Quiz questions - original scenarios, no source assessment programme copied
+const QUIZ=[
+ ['What is the value of int("18")?',['The number 18','The text "18"','The number 1.8','A list containing 18'],0,'int converts a whole-number string into an integer.'],
+ ['Which expression checks whether count is different from 7?',['count = 7','count == 7','count != 7','count => 7'],2,'!= is the not-equal comparison operator.'],
+ ['What does range(2, 7, 2) generate?',['2, 4, 6','2, 4, 6, 8','3, 5, 7','2, 3, 4, 5, 6'],0,'The values start at two, increase by two, and stop before seven.'],
+ ['Which loop suits going through every book title stored in a list?',['for title in books:','while True:','if title in books:','elif books:'],0,'A for loop can iterate directly over each item.'],
+ ['What index selects the last item in ["red", "gold", "pink"]?',['0','1','2','3'],2,'Indices for three elements are 0, 1 and 2.'],
+ ['What happens after boxes.append(9)?',['An item is removed','A new item is added at the end','All items become 9','The first item changes to 9'],1,'append adds a new list element at the end.'],
+ ['Why can a function be called more than once?',['Its instructions are reusable','Its code is automatically copied','It cannot contain variables','It always returns a number'],0,'Functions package reusable actions or calculations.'],
+ ['What is the purpose of a function parameter?',['To pass information into a function','To stop every loop','To declare a syntax error','To print output automatically'],0,'Parameters hold input values given to a call.'],
+ ['What will this print? x = 3; x = x + 5; print(x)',['3','5','8','35'],2,'The new value of x is the previous value plus five.'],
+ ['A function contains return length * width. What happens?',['It sends the product to its caller','It prints the formula as text','It creates a list','It repeats indefinitely'],0,'return passes a calculated value back.'],
+ ['Which change fixes if points >= 6 followed by an indented print?',['Add a colon after 6','Remove the indentation','Change >= to =','Remove the print'],0,'Compound statements require a colon before their indented body.'],
+ ['Which is an example of a boundary test for if height >= 140?',['139 and 140','20 and 30','red and blue','a mouse and keyboard'],0,'Testing at and immediately below the boundary checks the comparison.'],
+ ['What is the result of "5" + "2"?',['7','52','"7"','An error'],1,'Two strings concatenate, producing the text 52.'],
+ ['How many lines are printed by for n in range(4)?',['3','4','5','0'],1,'The values are 0, 1, 2 and 3: four iterations.'],
+ ['What does len([6, 9, 12]) produce?',['2','3','12','27'],1,'len counts the list elements rather than adding their values.'],
+ ['What is a logic error?',['Valid code giving an unintended result','A missing colon preventing execution','A problem saving the file','A deliberate print statement'],0,'A logic error can produce incorrect behaviour even when the programme runs.']
+];
+let quizAt=0,quizScore=0,quizChosen=false;
+function paintQuiz(){
+ $('quizFeedback').hidden=true;quizChosen=false;let q=QUIZ[quizAt];
+ $('quizProgress').textContent=`Question ${quizAt+1} of ${QUIZ.length} · ${quizScore} correct so far`;
+ $('quizMeter').style.width=(100*quizAt/QUIZ.length)+'%';
+ $('quizQuestion').innerHTML=`<h3>${esc(q[0])}</h3>`;
+ $('quizOptions').innerHTML=q[1].map((a,i)=>`<button class="optbtn" data-answer="${i}" type="button">${String.fromCharCode(65+i)}. ${esc(a)}</button>`).join('');
+ $('quizNext').disabled=true;$('quizNext').textContent=quizAt===QUIZ.length-1?'Finish quiz ✓':'Next question →';
+}
+$('quizOptions').addEventListener('click',e=>{
+ let btn=e.target.closest('[data-answer]');if(!btn||quizChosen)return;quizChosen=true;let n=Number(btn.dataset.answer),q=QUIZ[quizAt];if(n===q[2])quizScore++;
+ [...$('quizOptions').querySelectorAll('.optbtn')].forEach((b,i)=>{b.disabled=true;if(i===q[2])b.classList.add('correct');else if(i===n)b.classList.add('wrong')});
+ $('quizFeedback').hidden=false;$('quizFeedback').innerHTML=`<strong>${n===q[2]?'Correct!':'Not quite.'}</strong> ${esc(q[3])}`;$('quizNext').disabled=false;
+});
+$('quizNext').onclick=()=>{if(quizAt<QUIZ.length-1){quizAt++;paintQuiz()}else{$('quizMeter').style.width='100%';$('quizProgress').textContent=`Complete · ${quizScore} / ${QUIZ.length} correct`; $('quizQuestion').innerHTML='<h3>Well done for finishing.</h3><p>Look again at any feedback you did not understand, then try a new Code Lab challenge.</p>';$('quizOptions').innerHTML='';$('quizFeedback').hidden=true;$('quizNext').disabled=true;}};
+$('quizRestart').onclick=()=>{quizAt=0;quizScore=0;paintQuiz()};paintQuiz();
+</script>
+</body></html>
