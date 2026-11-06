@@ -23,7 +23,7 @@ The hub is organised by year group and unit. Available units may change as resou
 | **Year 7** | Unit 1 and 2 revision, including foundational Computer Science knowledge and e-safety resources |
 | **Year 8** | Unit 1 and 2 revision, plus further units including sorting and e-safety |
 | **Year 9** | Computer Science units including Python programming, image editing and artificial intelligence |
-| **GCSE (Years 10 and 11)** | OCR J277 [Unit 3: Networks](gcse/unit3.html) and [Unit 4: Network Security & Systems Software](gcse/unit4.html), including interactive simulations, flashcards, knowledge maps, revision notes and MCQs |
+| **GCSE (Years 10 and 11)** | OCR J277 [Unit 1](gcse/unit1.html), [Unit 2](gcse/unit2.html), [Unit 3](gcse/unit3.html), [Unit 4](gcse/unit4.html) and [Unit 5: Impacts of Digital Technology](gcse/unit5.html), with simulations, flashcards, knowledge maps, notes and MCQs |
 | **A Level (Years 12 and 13)** | One combined OCR H446 revision section, with resources coming soon |
 
 **Open the site's home page (`index.html`) to see the current list of resources.** The home page is the authoritative directory of published units.
@@ -31,7 +31,9 @@ The hub is organised by year group and unit. Available units may change as resou
 
 ### GCSE Unit 4: Network Security & Systems Software
 
-Open: https://kingsnortongirls.github.io/revision/gcse/unit4.html
+Open Unit 4: https://kingsnortongirls.github.io/revision/gcse/unit4.html
+
+Open Unit 5: https://kingsnortongirls.github.io/revision/gcse/unit5.html
 
 Based on four lesson presentations (Network Threats, Preventing Vulnerabilities, Operating Systems and Utility Software), this standalone HTML revision page provides 41 core concepts, 53 flashcards, 48 original self-marking MCQs, a topic-linked knowledge map and eight interactive practice labs:
 
