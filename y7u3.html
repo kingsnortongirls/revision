@@ -69,11 +69,22 @@ function paint(){
  $('count').textContent='Card '+(position+1)+' of '+deck.length;
  $('prev').disabled=position===0;$('next').disabled=position>=deck.length-1;
 }
-function mark(label){if(!deck.length)return;results[deck[position]]=label;save();
- const previous=position;const idx=deck[position];
- if($('mode').value!=='all'){loadDeck();return;}
- if(position<deck.length-1)position++;paint();$('announcer').textContent=(label==='got'?'Marked as known. ':'Marked for retry. ')+(position===previous?'Reached final card.':'Next question.');
-}
+function mark(label){
+  if(!deck.length)return;
+  const completedId=deck[position];
+  results[completedId]=label;save();
+  if($('mode').value!=='all'){loadDeck();return;}
+  const next=deck.findIndex((id,i)=>i>position&&!results[id]);
+  const firstPending=deck.findIndex(id=>!results[id]);
+  if(next>=0||firstPending>=0){position=next>=0?next:firstPending;paint();$('announcer').textContent='Marked. Next untested card.';return;}
+  statistics();flipTo(false);
+  $('studyarea').hidden=true;$('empty').hidden=false;
+  $('count').textContent=deck.length+' cards reviewed';
+  const retry=deck.filter(id=>results[id]==='retry').length;
+  $('emptytitle').textContent='All cards reviewed!';
+  $('emptymsg').textContent=retry?retry+' card(s) need another go. Select Try again to review them, or All cards to start again.':'Every card in this selection is marked Got it. Select All cards to practise again.';
+  $('announcer').textContent=$('emptytitle').textContent;
+ }
 $('card').addEventListener('click',()=>flipTo(!flipped));
 $('again').addEventListener('click',()=>mark('retry'));
 $('got').addEventListener('click',()=>mark('got'));
