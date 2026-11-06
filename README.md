@@ -23,7 +23,7 @@ The hub is organised by year group and unit. Available units may change as resou
 | **Year 7** | Unit 1 and 2 revision, including foundational Computer Science knowledge and e-safety resources |
 | **Year 8** | Unit 1 and 2 revision, plus further units including sorting and e-safety |
 | **Year 9** | Computer Science units including Python programming, image editing and artificial intelligence |
-| **GCSE (Years 10 and 11)** | OCR J277 [Unit 1](gcse/unit1.html), [Unit 2](gcse/unit2.html), [Unit 3](gcse/unit3.html), [Unit 4](gcse/unit4.html) and [Unit 5: Impacts of Digital Technology](gcse/unit5.html), with simulations, flashcards, knowledge maps, notes and MCQs |
+| **GCSE (Years 10 and 11)** | OCR J277 [Unit 1](gcse/unit1.html), [Unit 2](gcse/unit2.html), [Unit 3](gcse/unit3.html), [Unit 4](gcse/unit4.html) [Unit 5: Impacts of Digital Technology](gcse/unit5.html) and [Unit 8: Logic and Languages](gcse/unit8.html), with simulations, flashcards, knowledge maps, notes and MCQs |
 | **A Level (Years 12 and 13)** | One combined OCR H446 revision section, with resources coming soon |
 
 **Open the site's home page (`index.html`) to see the current list of resources.** The home page is the authoritative directory of published units.
@@ -127,3 +127,10 @@ If the repository is published from its root, a page in `y8/` is typically reach
 Created for pupils studying **Computer Science at Kings Norton Girls' School**.
 
 This is a school revision resource, not an official examination-board publication. Pupils should follow their teacher's guidance on which topics to revise for a particular assessment.
+
+
+### GCSE Unit 8: Logic and Languages
+
+Open the revision page: https://kingsnortongirls.github.io/revision/gcse/unit8.html
+
+Based on the five uploaded lesson presentations: logic diagrams and truth tables, defensive design, errors and testing, translators and facilities of languages, and integrated development environments. This standalone responsive revision hub includes detailed revision notes, a five-branch knowledge map, 50 two-sided accessible flashcards, 40 automatically marked multiple-choice questions with topic feedback and practice-mistake tracking, six interactive labs (including logic gate diagrams and truth tables, validation, test data, error diagnosis, translator comparison and IDE debugging), and five extended-answer practice tasks with success criteria. Questions and scenarios are freshly authored for revision rather than copied from examinations. Student progress is stored locally where browser storage is available. This page is in the shared GCSE section, without assuming Units 6 or 7 are published.
