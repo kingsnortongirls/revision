@@ -23,10 +23,28 @@ The hub is organised by year group and unit. Available units may change as resou
 | **Year 7** | Unit 1 and 2 revision, including foundational Computer Science knowledge and e-safety resources |
 | **Year 8** | Unit 1 and 2 revision, plus further units including sorting and e-safety |
 | **Year 9** | Computer Science units including Python programming, image editing and artificial intelligence |
-| **GCSE (Years 10 and 11)** | A combined OCR J277 revision section, including published networking resources |
+| **GCSE (Years 10 and 11)** | OCR J277 [Unit 3: Networks](gcse/unit3.html) and [Unit 4: Network Security & Systems Software](gcse/unit4.html), including interactive simulations, flashcards, knowledge maps, revision notes and MCQs |
 | **A Level (Years 12 and 13)** | One combined OCR H446 revision section, with resources coming soon |
 
 **Open the site's home page (`index.html`) to see the current list of resources.** The home page is the authoritative directory of published units.
+
+
+### GCSE Unit 4: Network Security & Systems Software
+
+Open: https://kingsnortongirls.github.io/revision/gcse/unit4.html
+
+Based on four lesson presentations (Network Threats, Preventing Vulnerabilities, Operating Systems and Utility Software), this standalone HTML revision page provides 41 core concepts, 53 flashcards, 48 original self-marking MCQs, a topic-linked knowledge map and eight interactive practice labs:
+
+- Identify malware and attacks from short incident scenarios
+- Audit a simulated phishing message
+- Apply simplified firewall packet-filtering rules
+- Step through a round-robin CPU scheduler
+- Allocate and release RAM in a model operating system
+- Reorganise fragmented files on an illustrative magnetic hard disk
+- Compare indicative compression savings for different data types
+- Encode and decode a message using a **demonstration-only** Caesar cipher
+
+Simulations are educational models rather than production security tools. The source presentations underpin the topics; questions and scenarios are newly written, not copied from assessment papers. No login, external scripts or third-party APIs are required.
 
 ## How pupils can use the hub
 
