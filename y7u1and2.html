@@ -103,7 +103,29 @@ function build(keep){const list=filtered();state.list=list;const found=list.inde
 function render(){stats();const empty=state.list.length===0;$('studyarea').classList.toggle('hidden',empty);$('empty').classList.toggle('hidden',!empty);if(empty){$('count').textContent='0 cards';$('emptytitle').textContent=mode.value==='retry'?'Nothing to retry!':mode.value==='unseen'?'You have tested all these cards!':'No cards found';$('emptymsg').textContent='Choose another set or select Show all cards.';return}const id=state.list[state.position],item=CARDS[id];state.flipped=false;$('card').classList.remove('isflipped');$('card').setAttribute('aria-label','Reveal answer for: '+item.q);$('fronttopic').textContent=item.topic;$('question').textContent=item.q;$('answer').textContent=item.a;$('count').textContent='Card '+(state.position+1)+' of '+state.list.length;$('again').disabled=true;$('got').disabled=true;$('prev').disabled=state.position===0;$('next').disabled=state.position===state.list.length-1;$('announcer').textContent='Question '+(state.position+1)+': '+item.q}
 function flip(){if(!state.list.length)return;state.flipped=!state.flipped;$('card').classList.toggle('isflipped',state.flipped);$('card').setAttribute('aria-label',state.flipped?'Show question':'Reveal answer');$('again').disabled=!state.flipped;$('got').disabled=!state.flipped;$('announcer').textContent=state.flipped?'Answer: '+CARDS[state.list[state.position]].a:'Question: '+CARDS[state.list[state.position]].q}
 function nav(delta){const p=state.position+delta;if(p<0||p>=state.list.length)return;state.position=p;render()}
-function rate(r){if(!state.flipped||!state.list.length)return;const id=state.list[state.position],oldpos=state.position;state.ratings[id]=r;save();build();if(state.list.includes(id)){state.position=Math.min(oldpos+1,state.list.length-1);render()}$('announcer').textContent=r==='got'?'Marked got it.':'Marked try again.'}
+function rate(r){
+ if(!state.flipped||!state.list.length)return;
+ const id=state.list[state.position],oldpos=state.position;
+ state.ratings[id]=r;save();
+ // Move to a card that has not been marked, including cards skipped earlier.
+ // Do not show the final card again after it has been marked.
+ const list=filtered();state.list=list;
+ const pending=list.filter(i=>!state.ratings[i]);
+ if(pending.length){
+   const next=pending.find(i=>list.indexOf(i)>oldpos)??pending[0];
+   state.position=list.indexOf(next);render();
+   $('announcer').textContent=r==='got'?'Marked got it. Next untested card.':'Marked try again. Next untested card.';
+ }else{
+   stats();
+   $('studyarea').classList.add('hidden');
+   $('empty').classList.remove('hidden');
+   const outstanding=list.filter(i=>state.ratings[i]==='retry').length;
+   $('count').textContent=list.length+' cards reviewed';
+   $('emptytitle').textContent=outstanding?'All cards reviewed!':'Fantastic! All cards completed!';
+   $('emptymsg').textContent=outstanding?'You have marked every card in this set. '+outstanding+' card(s) are marked Try again. Choose Try again cards to practise them, or Show all cards to revisit the deck.':'You have marked every card in this set. Great work! Choose Show all cards to practise again.';
+   $('announcer').textContent=$('emptytitle').textContent;
+ }
+}
 $('card').addEventListener('click',flip);$('prev').addEventListener('click',()=>nav(-1));$('next').addEventListener('click',()=>nav(1));$('again').addEventListener('click',()=>rate('retry'));$('got').addEventListener('click',()=>rate('got'));topic.addEventListener('change',()=>{state.position=0;build()});mode.addEventListener('change',()=>{state.position=0;build()});$('showall').addEventListener('click',()=>{topic.value='all';mode.value='all';state.position=0;build()});$('shuffle').addEventListener('click',()=>{for(let i=state.order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[state.order[i],state.order[j]]=[state.order[j],state.order[i]]}state.position=0;build()});$('reset').addEventListener('click',()=>{if(confirm('Clear your saved flashcard progress and start again?')){state.ratings={};save();mode.value='all';state.position=0;build()}});
 // Three accessible tabs, all content stays in this one HTML file.
 const tabs=[...document.querySelectorAll('.tab')];function showTab(target,updateHash=true){tabs.forEach(b=>{const yes=b.dataset.target===target;b.setAttribute('aria-selected',String(yes));b.tabIndex=yes?0:-1;$(b.dataset.target).hidden=!yes});if(updateHash){history.replaceState(null,'','#'+target)}window.scrollTo({top:0,behavior:'instant'})}
