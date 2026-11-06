@@ -113,7 +113,19 @@ function showCard(){
 }
 $('flipcard').addEventListener('click',()=>{isFlipped=!isFlipped;$('flipcard').classList.toggle('flipped',isFlipped);$('again').disabled=!isFlipped;$('got').disabled=!isFlipped;$('flipcard').setAttribute('aria-label',isFlipped?'Flip back to the question':'Flip to reveal the answer')});
 $('previous').onclick=()=>{cardIndex--;showCard()};$('next').onclick=()=>{cardIndex++;showCard()};
-function markCard(status){if(!selection.length||!isFlipped)return;progress[selection[cardIndex]]=status;saveStore('kngs-y8u5-flashcards',progress);const previousID=selection[cardIndex];rebuildSelection();const nextIndex=selection.indexOf(previousID);if(nextIndex>=0)cardIndex=Math.min(nextIndex+1,selection.length-1);else cardIndex=Math.min(cardIndex,selection.length-1);showCard()}
+function markCard(status){
+  if(!selection.length||!isFlipped)return;
+  const previousID=selection[cardIndex],previousPosition=cardIndex;
+  progress[previousID]=status;
+  saveStore('kngs-y8u5-flashcards',progress);
+  const topic=$('topic').value,mode=$('cardmode').value;
+  selection=shuffledOrder.filter(id=>{const c=CARDS[id-1];return (topic==='all'||c.topic===topic)&&(mode==='all'||(mode==='retry'&&progress[id]==='retry')||(mode==='unseen'&&!progress[id]))});
+  if(!selection.length){cardIndex=0;showCard();$('announce').textContent='All cards in this selection have been reviewed.';return;}
+  const nextUntested=selection.findIndex((id,index)=>index>previousPosition&&!progress[id]);
+  const firstUntested=selection.findIndex(id=>!progress[id]);
+  cardIndex=nextUntested>=0?nextUntested:firstUntested>=0?firstUntested:Math.min(previousPosition+1,selection.length-1);
+  showCard();
+}
 $('again').onclick=()=>markCard('retry');$('got').onclick=()=>markCard('got');$('topic').onchange=rebuildSelection;$('cardmode').onchange=rebuildSelection;
 $('shuffle').onclick=()=>{for(let i=shuffledOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffledOrder[i],shuffledOrder[j]]=[shuffledOrder[j],shuffledOrder[i]]}rebuildSelection()};
 $('resetprogress').onclick=()=>{if(confirm('Reset all Year 8 Unit 5 flashcard progress?')){progress={};saveStore('kngs-y8u5-flashcards',progress);rebuildSelection()}};
