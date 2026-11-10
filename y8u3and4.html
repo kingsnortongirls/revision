@@ -24,6 +24,11 @@ main{max-width:1130px;margin:auto;padding:28px 18px 75px}.tabpanel[hidden]{displ
 @media(max-width:540px){.hero-inner{padding:17px 15px 27px}.backlink{margin-bottom:14px}.hero h1{font-size:39px}.hero-visual{padding:13px}.hero-bits{font-size:29px}.hero-transform .code-chip{font-size:14px}.flash-tools{grid-template-columns:1fr 1fr}.flash-tools .field{grid-column:1/-1}.card-3d{height:380px}.card-face{padding:42px 13px 35px}.card-content{font-size:clamp(18px,5.7vw,24px)}.card-face.back .card-content{font-size:clamp(17px,5vw,22px)}.mini-bit{min-width:24px;font-size:15px;min-height:29px}.readout{gap:5px}.readout .number{font-size:21px}#binaryReadout{font-size:16px;letter-spacing:-.055em;white-space:nowrap}.readout>div{padding:9px 3px}.bit-button{min-height:56px;font-size:20px}.bit-board{gap:3px}.addition-table{border-spacing:2px;font-size:16px}.addition-table td{min-width:24px;width:28px;height:31px}.controlrow .field{min-width:130px}.panel{padding:15px;border-radius:14px}.instruction-buttons button{font-size:11px}.opcode-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.opcode{padding:6px 2px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;animation:none!important}}
 @media print{nav.tabs,.btnrow,.card-actions,.card-nav,.hero-visual,#flashcards,#numberlab,#binarymaths,#instructionlab,#quiz{display:none!important}main{padding:5px}.tabpanel[hidden]{display:block!important}.panel{box-shadow:none;break-inside:avoid}}
+
+/* Clearer, easier-to-read KS3 flashcards */
+.questiontext,.card-question,.flash-question,.flip-face .questiontext{max-width:34ch;line-height:1.4;overflow-wrap:break-word}
+.answertext,.card-answer,.flash-answer,.flip-face .answertext{max-width:48ch;line-height:1.5;overflow-wrap:break-word}
+@media(prefers-reduced-motion:reduce){.flip-card,.flip-inner,.flash-card{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
