@@ -1,12 +1,25 @@
 <!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#12345b"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><title>SLR 14 Data Structures | KNGS A Level Revision</title><meta name="description" content="OCR H446 SLR14 independent data structures revision: notes, simulators, flashcards, quiz and further resources."><style>
 :root{--navy:#12345b;--blue:#196d9a;--ice:#ecf7fd;--bg:#f5f9fc;--line:#d3e5ef;--ink:#193248;--muted:#597086}
-*{box-sizing:border-box}html{scroll-behaviour:smooth;scroll-behavior:smooth}body{font:16px/1.58 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);margin:0}button,select,input,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:default}a{color:inherit}:focus-visible{outline:3px solid #e9af32;outline-offset:3px}h1,h2,h3{line-height:1.2}h1{font-size:clamp(32px,4.5vw,52px);letter-spacing:-.04em;margin:12px 0}h2{font-size:clamp(23px,3vw,30px);margin:0 0 9px}h3{font-size:19px;margin:18px 0 8px}p{margin:9px 0}pre{background:#102e4b;color:#ecfaff;padding:15px;border-radius:10px;overflow:auto;font-size:13px}code{font:0.92em Consolas,monospace}.wrap{width:min(1150px,calc(100% - 32px));margin:auto}.header{background:var(--navy);color:#fff;border-bottom:4px solid #54c0e4}.header .wrap{min-height:67px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-weight:900;text-decoration:none}.brand b{display:inline-block;background:#9be6fa;color:var(--navy);padding:6px;border-radius:7px;margin-right:8px}.header nav a{display:inline-block;font-size:13px;padding:8px;color:#dcf3ff;text-decoration:none}.hero{background:linear-gradient(125deg,#12345b,#20709d);padding:35px 0 42px;color:#fff}.hero h1 span{color:#9ae8ff}.hero p{color:#e1f1fb;max-width:800px}.chip{border:1px solid #ffffff69;background:#ffffff16;padding:6px 11px;border-radius:99px;font-size:12px;margin:10px 5px 0 0;display:inline-block}.layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:19px;align-items:start;padding:22px 0}.sidebar,.panel{background:white;border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:0 10px 25px #173f5f0b}.sidebar{position:sticky;top:10px}.sidebar button{display:block;width:100%;text-align:left;border:0;background:transparent;color:#234b68;padding:10px;border-radius:8px;font-size:13px;font-weight:750}.sidebar button.active,.sidebar button:hover{background:#e8f5fc}.sidebar .navlabel{font-size:11px;letter-spacing:.13em;font-weight:850;color:#517c96;text-transform:uppercase}.tabbar,.controls{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.btn,.tab{border:1px solid #c2d9e8;background:#eaf5fb;color:#174c73;border-radius:9px;padding:10px 13px;font-weight:800;font-size:13px;text-decoration:none;display:inline-block}.btn:hover,.tab:hover{background:#d9eef8}.btn.primary,.tab[aria-selected=true]{background:#175f8d;color:#fff;border-color:#175f8d}.hide{display:none!important}.subtitle,.muted{color:var(--muted)}.small{font-size:12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.note,.exercise{background:#f5fbfe;border:1px solid #d4e7f0;border-radius:11px;padding:16px}.note strong{color:#155b84}.exercise{background:#eef8fd}.lessonCards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.lessonCard{background:#f9fcff;border:1px solid var(--line);padding:15px;text-align:left;border-radius:12px;color:var(--ink)}.lessonCard:hover{background:#edf8fc}.lessonCard strong{display:block;margin:5px 0}.label{color:#186e9e;text-transform:uppercase;font-size:11px;font-weight:900;letter-spacing:.1em}.cells{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0}.cell{background:#e7f4fc;border:1px solid #a8d4e8;border-radius:9px;padding:10px;min-width:59px;text-align:center;font-weight:750}.cell small{display:block;color:#56778d;font-size:10px}.cell.selected{background:#b9e9ce;border-color:#5baf82}.cell.empty{background:#f6f9fb;color:#789}.controls label{font-size:12px;font-weight:750;display:flex;flex-direction:column;gap:4px}.controls input,.controls select,textarea{border:1px solid #afcddd;border-radius:8px;padding:9px;max-width:100%}textarea{width:100%;min-height:100px}.status{background:#eff8fc;border:1px solid #c8e4ef;border-radius:9px;padding:12px;margin:12px 0}.good{background:#e7f6ed;border-color:#a7dbbd}.bad{background:#fff1e9;border-color:#e7bca7}.flash{border:1px solid #bddbeb;border-radius:13px;background:#edf8fd;padding:32px 15px;min-height:170px;display:grid;place-items:center;text-align:center;font-size:21px;font-weight:850;width:100%;color:#1c4d70}.flash:hover{background:#e3f2fa}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:15px 0}.option{padding:12px;text-align:left;border:1px solid #bdd8e6;background:#f2f9fd;color:#174e75;border-radius:9px;font-weight:700}.option.correct{background:#e3f4ea;border-color:#8bc9a5}.option.wrong{background:#fff0e9;border-color:#d5aa95}.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.links a{border:1px solid var(--line);padding:14px;text-decoration:none;border-radius:10px;background:#f4fbfe;font-weight:800}.links a small{display:block;color:var(--muted);font-weight:400;margin-top:5px}.progress{height:9px;background:#e2f0f7;border-radius:20px;overflow:hidden}.progress span{display:block;background:#369fc8;height:100%;width:0}.diagram{overflow:auto;background:#f6fbfd;border:1px solid #d2e7f0;border-radius:11px;padding:10px}svg{max-width:100%}@media(max-width:800px){.layout{grid-template-columns:1fr}.sidebar{position:static}.sidebar button{display:inline-block;width:auto}.grid,.links,.lessonCards{grid-template-columns:1fr}}@media(max-width:550px){.options{grid-template-columns:1fr}.panel{padding:15px}}@media print{.header,.hero,.sidebar,.tabbar,.controls{display:none!important}.layout{display:block}.panel{border:0;box-shadow:none}.hide{display:block!important}}</style></head><body>
+*{box-sizing:border-box}html{scroll-behaviour:smooth;scroll-behavior:smooth}body{font:16px/1.58 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);margin:0}button,select,input,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:default}a{color:inherit}:focus-visible{outline:3px solid #e9af32;outline-offset:3px}h1,h2,h3{line-height:1.2}h1{font-size:clamp(32px,4.5vw,52px);letter-spacing:-.04em;margin:12px 0}h2{font-size:clamp(23px,3vw,30px);margin:0 0 9px}h3{font-size:19px;margin:18px 0 8px}p{margin:9px 0}pre{background:#102e4b;color:#ecfaff;padding:15px;border-radius:10px;overflow:auto;font-size:13px}code{font:0.92em Consolas,monospace}.wrap{width:min(1150px,calc(100% - 32px));margin:auto}.header{background:var(--navy);color:#fff;border-bottom:4px solid #54c0e4}.header .wrap{min-height:67px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-weight:900;text-decoration:none}.brand b{display:inline-block;background:#9be6fa;color:var(--navy);padding:6px;border-radius:7px;margin-right:8px}.header nav a{display:inline-block;font-size:13px;padding:8px;color:#dcf3ff;text-decoration:none}.hero{background:linear-gradient(125deg,#12345b,#20709d);padding:35px 0 42px;color:#fff}.hero h1 span{color:#9ae8ff}.hero p{color:#e1f1fb;max-width:800px}.chip{border:1px solid #ffffff69;background:#ffffff16;padding:6px 11px;border-radius:99px;font-size:12px;margin:10px 5px 0 0;display:inline-block}.layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:19px;align-items:start;padding:22px 0}.sidebar,.panel{background:white;border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:0 10px 25px #173f5f0b}.sidebar{position:sticky;top:10px}.sidebar button{display:block;width:100%;text-align:left;border:0;background:transparent;color:#234b68;padding:10px;border-radius:8px;font-size:13px;font-weight:750}.sidebar button.active,.sidebar button:hover{background:#e8f5fc}.sidebar .navlabel{font-size:11px;letter-spacing:.13em;font-weight:850;color:#517c96;text-transform:uppercase}.tabbar,.controls{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.btn,.tab{border:1px solid #c2d9e8;background:#eaf5fb;color:#174c73;border-radius:9px;padding:10px 13px;font-weight:800;font-size:13px;text-decoration:none;display:inline-block}.btn:hover,.tab:hover{background:#d9eef8}.btn.primary,.tab[aria-selected=true]{background:#175f8d;color:#fff;border-color:#175f8d}.hide{display:none!important}.subtitle,.muted{color:var(--muted)}.small{font-size:12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.note,.exercise{background:#f5fbfe;border:1px solid #d4e7f0;border-radius:11px;padding:16px}.note strong{color:#155b84}.exercise{background:#eef8fd}.lessonCards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.lessonCard{background:#f9fcff;border:1px solid var(--line);padding:15px;text-align:left;border-radius:12px;color:var(--ink)}.lessonCard:hover{background:#edf8fc}.lessonCard strong{display:block;margin:5px 0}.label{color:#186e9e;text-transform:uppercase;font-size:11px;font-weight:900;letter-spacing:.1em}.cells{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0}.cell{background:#e7f4fc;border:1px solid #a8d4e8;border-radius:9px;padding:10px;min-width:59px;text-align:center;font-weight:750}.cell small{display:block;color:#56778d;font-size:10px}.cell.selected{background:#b9e9ce;border-color:#5baf82}.cell.empty{background:#f6f9fb;color:#789}.controls label{font-size:12px;font-weight:750;display:flex;flex-direction:column;gap:4px}.controls input,.controls select,textarea{border:1px solid #afcddd;border-radius:8px;padding:9px;max-width:100%}textarea{width:100%;min-height:100px}.status{background:#eff8fc;border:1px solid #c8e4ef;border-radius:9px;padding:12px;margin:12px 0}.good{background:#e7f6ed;border-color:#a7dbbd}.bad{background:#fff1e9;border-color:#e7bca7}.flash{border:1px solid #bddbeb;border-radius:13px;background:#edf8fd;padding:32px 15px;min-height:170px;display:grid;place-items:center;text-align:center;font-size:21px;font-weight:850;width:100%;color:#1c4d70}.flash:hover{background:#e3f2fa}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:15px 0}.option{padding:12px;text-align:left;border:1px solid #bdd8e6;background:#f2f9fd;color:#174e75;border-radius:9px;font-weight:700}.option.correct{background:#e3f4ea;border-color:#8bc9a5}.option.wrong{background:#fff0e9;border-color:#d5aa95}.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.links a{border:1px solid var(--line);padding:14px;text-decoration:none;border-radius:10px;background:#f4fbfe;font-weight:800}.links a small{display:block;color:var(--muted);font-weight:400;margin-top:5px}.progress{height:9px;background:#e2f0f7;border-radius:20px;overflow:hidden}.progress span{display:block;background:#369fc8;height:100%;width:0}.diagram{overflow:auto;background:#f6fbfd;border:1px solid #d2e7f0;border-radius:11px;padding:10px}svg{max-width:100%}@media(max-width:800px){.layout{grid-template-columns:1fr}.sidebar{position:static}.sidebar button{display:inline-block;width:auto}.grid,.links,.lessonCards{grid-template-columns:1fr}}@media(max-width:550px){.options{grid-template-columns:1fr}.panel{padding:15px}}@media print{.header,.hero,.sidebar,.tabbar,.controls{display:none!important}.layout{display:block}.panel{border:0;box-shadow:none}.hide{display:block!important}}.demo-toolbar{background:linear-gradient(145deg,#f3fbff,#e8f5fc);border:1px solid #b8dae9;border-radius:12px;padding:16px;margin:14px 0 18px}.demo-top{display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap}.demo-top strong{color:#154e72}.demo-toolbar .controls{align-items:end}.demo-speed{font-size:12px;font-weight:750;display:flex;flex-direction:column;gap:5px}.demo-speed select{min-width:145px;background:white}.demo-toolbar .progress{margin-top:12px}.demo-toolbar #demoCounter{margin-bottom:0}</style></head><body>
 <header class="header"><div class="wrap"><a class="brand" href="../index.html"><b>CS</b>KNGS Computer Science</a><nav><a href="../index.html">All revision hubs</a><a href="slr6-7.html">SLR 6–7</a></nav></div></header>
 <section class="hero"><div class="wrap"><div class="label" style="color:#a9e5fa">OCR H446 · Component 01 · SLR 14</div><h1>Data <span>Structures</span></h1><p>Seven detailed lessons, interactive visualisers, retrieval practice and original questions. All tasks use fresh data and examples, not the assessment paper.</p><span class="chip">Arrays · Tuples · Records</span><span class="chip">Queues · Lists · Stacks</span><span class="chip">Hash tables · Graphs · Trees</span></div></section>
 <div class="wrap layout"><aside class="sidebar"><div class="navlabel">Revision lessons</div><div id="sidenav"></div><hr><div class="navlabel">Your progress</div><p id="progressText" class="small"></p><div class="progress"><span id="progressBar"></span></div><button id="reset">Reset saved progress</button></aside>
 <main class="panel"><div class="tabbar" role="tablist" aria-label="Revision sections"><button class="tab" data-tab="learn" aria-selected="true">Learn</button><button class="tab" data-tab="tools" aria-selected="false">Interactive labs</button><button class="tab" data-tab="cards" aria-selected="false">Flashcards</button><button class="tab" data-tab="quiz" aria-selected="false">Self-marking quiz</button><button class="tab" data-tab="practice" aria-selected="false">Written practice</button><button class="tab" data-tab="resources" aria-selected="false">Resources</button></div>
 <section id="learn"><h2>Choose a topic</h2><p class="subtitle">Read the notes, work through the original examples and mark each topic revised.</p><div id="lessonCards" class="lessonCards"></div><article id="lessonBody"></article></section>
-<section id="tools" class="hide"><h2>Interactive data structure labs</h2><p class="subtitle">Use the controls to change the data and inspect how each structure behaves. Each lab uses original, non-assessment examples.</p><div class="controls"><label>Choose lab<select id="labSelect"><option value="array">Array explorer</option><option value="queue">Circular queue</option><option value="stack">Stack simulator</option><option value="linked">Linked list builder</option><option value="hash">Hash table and probing</option><option value="graph">Graph adjacency explorer</option><option value="tree">Binary search tree and traversals</option></select></label></div><div id="labArea"></div></section>
+<section id="tools" class="hide"><h2>Interactive data structure labs</h2><p class="subtitle">Use the controls to change the data and inspect how each structure behaves. Each lab uses original, non-assessment examples.</p><div class="controls"><label>Choose lab<select id="labSelect"><option value="array">Array explorer</option><option value="queue">Circular queue</option><option value="stack">Stack simulator</option><option value="linked">Linked list builder</option><option value="hash">Hash table and probing</option><option value="graph">Graph adjacency explorer</option><option value="tree">Binary search tree and traversals</option></select></label></div><div class="demo-toolbar" aria-label="Interactive lab demonstration controls">
+ <div class="demo-top"><strong>Teacher demonstration</strong><span class="small muted">Seven independent sample walkthroughs, none from the assessment</span></div>
+ <div class="controls">
+  <button type="button" class="btn primary" id="demoLoad">Load sample data</button>
+  <button type="button" class="btn primary" id="demoPlay">▶ Auto play</button>
+  <button type="button" class="btn" id="demoPause" disabled>Pause</button>
+  <button type="button" class="btn" id="demoStep">Next step</button>
+  <button type="button" class="btn" id="demoRestart">Restart demonstration</button>
+  <label class="demo-speed">Playback speed<select id="demoSpeed" aria-label="Playback speed"><option value="2200">Slow (2.2s)</option><option value="1200" selected>Normal (1.2s)</option><option value="650">Fast (0.65s)</option></select></label>
+ </div>
+ <div class="status" id="demoStatus" role="status" aria-live="polite">Choose a lab and load sample data, or start autoplay to watch the structure change.</div>
+ <div class="progress" aria-label="Demonstration progress"><span id="demoProgress"></span></div>
+ <p class="small muted" id="demoCounter">0 steps completed</p>
+</div><div id="labArea"></div></section>
 <section id="cards" class="hide"><h2>Retrieval flashcards</h2><p class="muted">Think of the answer before revealing it. Mark a card as remembered to build your score.</p><p id="cardCount"></p><button class="flash" id="flash" type="button">Select a flashcard</button><div class="controls"><button class="btn" id="prevCard">Previous</button><button class="btn" id="flipCard">Reveal / hide</button><button class="btn primary" id="knownCard">I remembered this</button><button class="btn" id="nextCard">Next</button></div></section>
 <section id="quiz" class="hide"><h2>Self-marking knowledge check</h2><p class="muted">21 new questions covering all seven topics. Feedback is provided after each choice.</p><div class="controls"><label>Topic<select id="quizTopic"><option value="all">All topics</option></select></label><label>Questions<select id="quizSize"><option value="all">All available</option><option value="10">10 questions</option><option value="5">5 questions</option></select></label><button class="btn primary" id="startQuiz">Start / restart</button></div><div id="quizBody"></div></section>
 <section id="practice" class="hide"><h2>Extended independent practice</h2><p class="subtitle">Write your reasoning before opening the guidance. These prompts are not adapted from the assessment.</p><div id="written"></div></section>
@@ -43,4 +56,138 @@ let qset=[],qi=0,score=0;function beginQuiz(){let t=$("quizTopic").value;qset=D.
 $("written").innerHTML=D.lessons.map((x,i)=>'<div class="exercise" style="margin:13px 0"><span class="label">Topic '+(i+1)+'</span><h3>'+esc(x[0])+'</h3><p>'+esc(x[4])+'</p><textarea aria-label="Written practice '+(i+1)+'" placeholder="Write your own explanation before reviewing the notes."></textarea><details><summary>Revision guidance</summary><p>'+esc(x[2])+'</p></details></div>').join("");
 $("reset").onclick=()=>{if(confirm("Clear lesson, flashcard and quiz progress stored on this browser?")){S={read:[],known:[],best:0};save();chooseLesson(lesson);showCard()}};
 chooseLesson(0);openLab();showCard();progress();
+</script>
+<script>
+/* SLR14 self-contained teacher demonstrations. Data never uses assessment examples. */
+(function(){
+ "use strict";
+ const $=id=>document.getElementById(id);
+ let actions=[],position=0,timer=null;
+ const action=(label,fn)=>({label,fn});
+ const field=(id,value)=>{const el=$(id);if(el)el.value=String(value)};
+ const press=id=>{const el=$(id);if(!el)throw new Error("Control unavailable: "+id);el.click()};
+ const info=(s)=>{$("demoStatus").textContent=s};
+ function stop(){if(timer!==null){clearInterval(timer);timer=null}$("demoPause").disabled=true;$("demoPlay").textContent="▶ Auto play";}
+ function resetLab(){
+  const map={array:"arrReset",queue:"qReset",stack:"sReset",linked:"liReset",hash:"hReset",graph:"gReset",tree:"treeReset"};
+  press(map[$("labSelect").value]);
+ }
+ function stepsFor(type){
+  switch(type){
+   case "array":return [
+    action("Read the initial gallery attendance figure at index 2.",()=>{field("arrayIdx",2);press("arrRead")}),
+    action("Update index 1 to 48 visitors.",()=>{field("arrayIdx",1);field("arrayValue",48);press("arrSet")}),
+    action("Read the newly changed index 1.",()=>{field("arrayIdx",1);press("arrRead")}),
+    action("Update index 4 to 64 visitors.",()=>{field("arrayIdx",4);field("arrayValue",64);press("arrSet")}),
+    action("Attempt to read index 7 to demonstrate bounds checking.",()=>{field("arrayIdx",7);press("arrRead")}),
+    action("Read the last valid index, 5.",()=>{field("arrayIdx",5);press("arrRead")})
+   ];
+   case "queue":return [
+    action("Enqueue label job B21.",()=>{field("qVal","B21");press("enq")}),
+    action("Enqueue label job B22.",()=>{field("qVal","B22");press("enq")}),
+    action("Enqueue label job B23.",()=>{field("qVal","B23");press("enq")}),
+    action("Dequeue the oldest label job.",()=>press("deq")),
+    action("Add label job B24.",()=>{field("qVal","B24");press("enq")}),
+    action("Add label job B25.",()=>{field("qVal","B25");press("enq")}),
+    action("Add label job B26.",()=>{field("qVal","B26");press("enq")}),
+    action("Add label job B27: the insertion index wraps to zero.",()=>{field("qVal","B27");press("enq")}),
+    action("Attempt to enqueue into a full queue.",()=>{field("qVal","B28");press("enq")}),
+    action("Dequeue again to show FIFO ordering.",()=>press("deq"))
+   ];
+   case "stack":return [
+    action("Push the blue puzzle move.",()=>{field("stVal","blue");press("push")}),
+    action("Push the red puzzle move.",()=>{field("stVal","red");press("push")}),
+    action("Push the gold puzzle move.",()=>{field("stVal","gold");press("push")}),
+    action("Peek at the top without removing it.",()=>press("peek")),
+    action("Pop the most recent move.",()=>press("pop")),
+    action("Push the green puzzle move.",()=>{field("stVal","green");press("push")}),
+    action("Pop green, showing last-in, first-out.",()=>press("pop")),
+    action("Pop red.",()=>press("pop")),
+    action("Pop blue.",()=>press("pop")),
+    action("Attempt to pop an empty stack (underflow).",()=>press("pop"))
+   ];
+   case "linked":return [
+    action("Append Oak as the head node.",()=>{field("liVal","Oak");press("liAdd")}),
+    action("Append Birch after Oak.",()=>{field("liVal","Birch");press("liAdd")}),
+    action("Append Hazel after Birch.",()=>{field("liVal","Hazel");press("liAdd")}),
+    action("Follow the links to traverse every node.",()=>press("liTraverse")),
+    action("Remove the first node and update the head.",()=>press("liRemove")),
+    action("Append Rowan to the end.",()=>{field("liVal","Rowan");press("liAdd")}),
+    action("Traverse the modified list.",()=>press("liTraverse"))
+   ];
+   case "hash":return [
+    action("Insert key 38 (38 MOD 11 = 5).",()=>{field("hKey",38);press("hAdd")}),
+    action("Insert key 49: collision at index 5 triggers probing.",()=>{field("hKey",49);press("hAdd")}),
+    action("Insert key 60: another collision follows the same probe chain.",()=>{field("hKey",60);press("hAdd")}),
+    action("Insert key 23, which hashes to index 1.",()=>{field("hKey",23);press("hAdd")}),
+    action("Find stored key 49.",()=>{field("hKey",49);press("hFind")}),
+    action("Try a lookup for key 71, which was never inserted.",()=>{field("hKey",71);press("hFind")}),
+    action("Insert key 71 to compare its new position.",()=>{field("hKey",71);press("hAdd")})
+   ];
+   case "graph":return [
+    action("Remove existing walkway P–Q.",()=>{field("gA","P");field("gB","Q");press("toggleEdge")}),
+    action("Add a new walkway Q–R.",()=>{field("gA","Q");field("gB","R");press("toggleEdge")}),
+    action("Remove walkway R–S.",()=>{field("gA","R");field("gB","S");press("toggleEdge")}),
+    action("Add walkway P–T and observe symmetric matrix entries.",()=>{field("gA","P");field("gB","T");press("toggleEdge")}),
+    action("Remove walkway P–T to restore the previous connection.",()=>{field("gA","P");field("gB","T");press("toggleEdge")})
+   ];
+   case "tree":return [
+    action("Insert 43 as the root.",()=>{field("treeVal",43);press("treeAdd")}),
+    action("Insert 19 to the left of 43.",()=>{field("treeVal",19);press("treeAdd")}),
+    action("Insert 67 to the right of 43.",()=>{field("treeVal",67);press("treeAdd")}),
+    action("Insert 11 into the left subtree.",()=>{field("treeVal",11);press("treeAdd")}),
+    action("Insert 27 into the left subtree.",()=>{field("treeVal",27);press("treeAdd")}),
+    action("Insert 58 into the right subtree.",()=>{field("treeVal",58);press("treeAdd")}),
+    action("Insert 75. Compare all three traversal orders.",()=>{field("treeVal",75);press("treeAdd")}),
+    action("Try duplicate key 43; duplicates are rejected.",()=>{field("treeVal",43);press("treeAdd")})
+   ];
+   default:return [];
+  }
+ }
+ function update(){
+  $("demoProgress").style.width=(actions.length?position/actions.length*100:0)+"%";
+  $("demoCounter").textContent=position+" of "+actions.length+" steps completed";
+ }
+ function initialise(){
+  stop();resetLab();actions=stepsFor($("labSelect").value);position=0;update();
+  info("Demonstration reset. Select Next step or Auto play.");
+ }
+ function next(){
+  if(!actions.length||position>=actions.length){
+   if(!actions.length)initialise();
+   else{stop();info("Demonstration complete. Restart to play it again.");return}
+  }
+  const step=actions[position];
+  try{
+   step.fn();
+   position++;
+   update();
+   info("Step "+position+" / "+actions.length+": "+step.label);
+   if(position>=actions.length){stop();info("Demonstration complete. "+step.label)}
+  }catch(err){stop();info("Unable to run this demonstration step: "+err.message)}
+ }
+ function play(){
+  if(timer!==null)return;
+  if(!actions.length||position>=actions.length)initialise();
+  $("demoPlay").textContent="Playing…";
+  $("demoPause").disabled=false;
+  next();
+  if(position<actions.length)timer=setInterval(next,Number($("demoSpeed").value));
+ }
+ $("demoLoad").addEventListener("click",()=>{
+  initialise();
+  const type=$("labSelect").value;
+  const sampleCount={array:3,queue:3,stack:3,linked:3,hash:3,graph:2,tree:5}[type];
+  for(let i=0;i<sampleCount;i++)next();
+  stop();info("Sample data loaded for "+$("labSelect").selectedOptions[0].text+". Press Auto play to continue, or Next step to explore manually.");
+ });
+ $("demoPlay").addEventListener("click",play);
+ $("demoPause").addEventListener("click",()=>{stop();info("Paused at step "+position+" of "+actions.length+". Resume or select Next step.")});
+ $("demoStep").addEventListener("click",()=>{stop();next()});
+ $("demoRestart").addEventListener("click",initialise);
+ $("demoSpeed").addEventListener("change",()=>{if(timer!==null){clearInterval(timer);timer=setInterval(next,Number($("demoSpeed").value))}});
+ $("labSelect").addEventListener("change",()=>{stop();actions=[];position=0;update();info("Ready: "+$("labSelect").selectedOptions[0].text+". Load sample data or start autoplay.")});
+ document.querySelectorAll("[data-tab]").forEach(b=>b.addEventListener("click",()=>{if(b.dataset.tab!=="tools"&&timer!==null){stop();info("Autoplay paused because you left the interactive labs.")}}));
+ update();
+})();
 </script></body></html>
